@@ -1,0 +1,8 @@
+D:\Repozytoria\Femd\Backend\FemdAPI.Core\bin\Debug\netstandard2.0\FemdAPI.Core.deps.json
+D:\Repozytoria\Femd\Backend\FemdAPI.Core\bin\Debug\netstandard2.0\FemdAPI.Core.dll
+D:\Repozytoria\Femd\Backend\FemdAPI.Core\obj\Debug\netstandard2.0\FemdAPI.Core.csprojAssemblyReference.cache
+D:\Repozytoria\Femd\Backend\FemdAPI.Core\obj\Debug\netstandard2.0\FemdAPI.Core.AssemblyInfoInputs.cache
+D:\Repozytoria\Femd\Backend\FemdAPI.Core\obj\Debug\netstandard2.0\FemdAPI.Core.AssemblyInfo.cs
+D:\Repozytoria\Femd\Backend\FemdAPI.Core\bin\Debug\netstandard2.0\FemdAPI.Core.pdb
+D:\Repozytoria\Femd\Backend\FemdAPI.Core\obj\Debug\netstandard2.0\FemdAPI.Core.dll
+D:\Repozytoria\Femd\Backend\FemdAPI.Core\obj\Debug\netstandard2.0\FemdAPI.Core.pdb
