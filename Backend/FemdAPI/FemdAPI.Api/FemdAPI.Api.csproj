@@ -9,9 +9,24 @@
     <Compile Remove="Migrations\20200222213821_poczatkowa.Designer.cs" />
     <Compile Remove="Migrations\20200222214618_poczatkowa.cs" />
     <Compile Remove="Migrations\20200222214618_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200222222909_poczatkowa.cs" />
+    <Compile Remove="Migrations\20200222222909_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200223204023_poczatkowa.cs" />
+    <Compile Remove="Migrations\20200223204023_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200223205946_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200223205946_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200223212252_Testowa.cs" />
+    <Compile Remove="Migrations\20200223212252_Testowa.Designer.cs" />
+    <Compile Remove="Migrations\20200227175052_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200227175052_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200227175639_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200227175639_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200228125134_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200228125134_Poczatkowa.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
       <PrivateAssets>all</PrivateAssets>

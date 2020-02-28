@@ -9,6 +9,9 @@ namespace FemdAPI.Core.Data
     public class FemdApiContext : DbContext
     {
         public DbSet<User> UserDbSet { get; set; }
+        public DbSet<Student> StudentDbSet { get; set; }
+        
+
         private readonly string _connectionString = @"Data Source=MATM94\SQLEXPRESS;Initial Catalog=FemdApi;Integrated Security=True;Pooling=False";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -22,12 +25,14 @@ namespace FemdAPI.Core.Data
 
             modelBuilder.Entity<User>()
                 .HasKey(k => k.Id);
-
+                
             modelBuilder.Entity<User>()
-                .HasMany<Student>(s => s.Students)
+                .HasOne<Student>(s => s.Student)
                 .WithOne(u => u.User)
-                .HasForeignKey(fk => fk.UserId)
-                .OnDelete(DeleteBehavior.Cascade);               
+                .HasForeignKey<Student>(fk => fk.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
         }
 
     }

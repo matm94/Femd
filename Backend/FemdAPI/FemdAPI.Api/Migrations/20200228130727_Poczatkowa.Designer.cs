@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FemdAPI.Api.Migrations
 {
     [DbContext(typeof(FemdApiContext))]
-    [Migration("20200222222909_poczatkowa")]
-    partial class poczatkowa
+    [Migration("20200228130727_Poczatkowa")]
+    partial class Poczatkowa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,9 +38,10 @@ namespace FemdAPI.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
-                    b.ToTable("Student");
+                    b.ToTable("StudentDbSet");
                 });
 
             modelBuilder.Entity("FemdAPI.Core.Entities.User", b =>
@@ -72,8 +73,8 @@ namespace FemdAPI.Api.Migrations
             modelBuilder.Entity("FemdAPI.Core.Entities.Student", b =>
                 {
                     b.HasOne("FemdAPI.Core.Entities.User", "User")
-                        .WithMany("Students")
-                        .HasForeignKey("UserId")
+                        .WithOne("Student")
+                        .HasForeignKey("FemdAPI.Core.Entities.Student", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

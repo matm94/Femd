@@ -36,9 +36,10 @@ namespace FemdAPI.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
-                    b.ToTable("Student");
+                    b.ToTable("StudentDbSet");
                 });
 
             modelBuilder.Entity("FemdAPI.Core.Entities.User", b =>
@@ -70,8 +71,8 @@ namespace FemdAPI.Api.Migrations
             modelBuilder.Entity("FemdAPI.Core.Entities.Student", b =>
                 {
                     b.HasOne("FemdAPI.Core.Entities.User", "User")
-                        .WithMany("Students")
-                        .HasForeignKey("UserId")
+                        .WithOne("Student")
+                        .HasForeignKey("FemdAPI.Core.Entities.Student", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
