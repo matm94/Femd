@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace FemdAPI.Core.Entities
@@ -14,10 +15,7 @@ namespace FemdAPI.Core.Entities
 
         public User User { get; set; }
         public Guid UserId { get; set; }
-        public Student()
-        {
-
-        }
+    
         public Student(string name, string level)
         {
             Id = Guid.NewGuid();

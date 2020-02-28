@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FemdAPI.Api.Migrations
 {
-    public partial class poczatkowa : Migration
+    public partial class Poczatkowa : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -24,7 +24,7 @@ namespace FemdAPI.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Student",
+                name: "StudentDbSet",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -34,9 +34,9 @@ namespace FemdAPI.Api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Student", x => x.Id);
+                    table.PrimaryKey("PK_StudentDbSet", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Student_UserDbSet_UserId",
+                        name: "FK_StudentDbSet_UserDbSet_UserId",
                         column: x => x.UserId,
                         principalTable: "UserDbSet",
                         principalColumn: "Id",
@@ -44,15 +44,16 @@ namespace FemdAPI.Api.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Student_UserId",
-                table: "Student",
-                column: "UserId");
+                name: "IX_StudentDbSet_UserId",
+                table: "StudentDbSet",
+                column: "UserId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Student");
+                name: "StudentDbSet");
 
             migrationBuilder.DropTable(
                 name: "UserDbSet");

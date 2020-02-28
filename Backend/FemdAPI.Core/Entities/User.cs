@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace FemdAPI.Core.Entities
@@ -14,13 +15,8 @@ namespace FemdAPI.Core.Entities
         public string Email { get; protected set; }
         public DateTime UpdatedAt{ get; protected set; }
         public bool IsActive { get; protected set; }
+        public Student Student { get; set; }
 
-        public IEnumerable<Student> Students { get; set; }
-
-        public User()
-        {
-            
-        }
         public User(string login, string password, string email)
         {
             Id = Guid.NewGuid();

@@ -33,26 +33,17 @@ namespace FemdAPI.Infrastructure
             {
                 new User("WhiteWolf","Ciri","Butcher@gmail.com")
                 {
-                  Students = new List<Student>
-                  {
-                      new Student("Geralt", "Expert")
-                  }
+                    Student = new Student("Geralt", "Expert")  
                 },
 
                 new User("Yennefer","Geralt","Unicorn@gmail.com")
                 {
-                  Students = new List<Student>
-                  {
-                      new Student("Yen", "Expert")
-                  }
+                    Student = new Student("Yen","Master")
                 },
 
-                new User("Cirilla","Ciria","Princess@gmail.com")
+                new User("Ciranell","Ciria","Princess@gmail.com")
                 {
-                  Students = new List<Student>
-                  {
-                      new Student("Ciri", "Noob")
-                  }
+                    Student = new Student("Ciri","Noob")
                 }
 
             };
