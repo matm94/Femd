@@ -4,14 +4,14 @@
     "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Infrastructure\\FemdAPI.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Infrastructure\\FemdAPI.Infrastructure.csproj": {
+    "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Core\\FemdAPI.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Infrastructure\\FemdAPI.Infrastructure.csproj",
-        "projectName": "FemdAPI.Infrastructure",
-        "projectPath": "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Infrastructure\\FemdAPI.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Core\\FemdAPI.Core.csproj",
+        "projectName": "FemdAPI.Core",
+        "projectPath": "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Core\\FemdAPI.Core.csproj",
         "packagesPath": "C:\\Users\\matm9\\.nuget\\packages\\",
-        "outputPath": "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Infrastructure\\obj\\",
+        "outputPath": "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Xamarin\\NuGet\\",
@@ -43,6 +43,108 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Infrastructure\\FemdAPI.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Infrastructure\\FemdAPI.Infrastructure.csproj",
+        "projectName": "FemdAPI.Infrastructure",
+        "projectPath": "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Infrastructure\\FemdAPI.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\matm9\\.nuget\\packages\\",
+        "outputPath": "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\matm9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Core\\FemdAPI.Core.csproj": {
+                "projectPath": "D:\\Repozytoria\\Femd\\Backend\\FemdAPI.Core\\FemdAPI.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
