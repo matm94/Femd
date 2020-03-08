@@ -11,9 +11,7 @@ namespace FemdAPI.Infrastructure.AutomapperProfile
     {
         public FemdProfile()
         {
-            CreateMap<User, UserDTO>()
-                .ForMember(n => n.Name, map => map.MapFrom(n => n.Student.Name))
-                .ForMember(n => n.Level, map => map.MapFrom(n => n.Student.Level));
+            CreateMap<User, UserDTO>();
 
         }
 

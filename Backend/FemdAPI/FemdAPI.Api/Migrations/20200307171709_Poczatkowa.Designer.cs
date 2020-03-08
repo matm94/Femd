@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FemdAPI.Api.Migrations
 {
     [DbContext(typeof(FemdApiContext))]
-    [Migration("20200228130727_Poczatkowa")]
+    [Migration("20200307171709_Poczatkowa")]
     partial class Poczatkowa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

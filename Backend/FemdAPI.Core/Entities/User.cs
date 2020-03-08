@@ -24,7 +24,6 @@ namespace FemdAPI.Core.Entities
             SetPassword(password);
             SetEmail(email);
             UpdatedAt = DateTime.UtcNow;
-
         }
 
         public void SetLogin(string login)
@@ -91,6 +90,5 @@ namespace FemdAPI.Core.Entities
             UpdatedAt = DateTime.UtcNow;
         }
 
-  
     }
 }
