@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using FemdAPI.Core.Data;
-using FemdAPI.Core.Entities;
-using FemdAPI.Core.Repositories;
-using FemdAPI.Infrastructure.Models;
+﻿using FemdAPI.Infrastructure.Models;
 using FemdAPI.Infrastructure.Services;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace FemdAPI.Api.Controllers
 {
@@ -24,14 +15,8 @@ namespace FemdAPI.Api.Controllers
             _userService = userService;
         }
 
-        //[HttpGet]
-        //public ActionResult<List<UserDTO>> Get()
-        //{
-        //    var user = _userService.GetAll().ToList();
-        //    return Ok(user);
-        //}
-
         [HttpGet("{email}")]
+        [Authorize]
         public ActionResult<UserDTO> Get(string email)
         {
             var user = _userService.Get(email);

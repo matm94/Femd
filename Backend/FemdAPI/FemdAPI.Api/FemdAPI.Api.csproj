@@ -27,10 +27,13 @@
     <Compile Remove="Migrations\20200228130727_Poczatkowa.Designer.cs" />
     <Compile Remove="Migrations\20200229121050_Poczatkowa.cs" />
     <Compile Remove="Migrations\20200229121050_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\FemdApiContextModelSnapshot.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="jose-jwt" Version="2.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
       <PrivateAssets>all</PrivateAssets>
@@ -40,7 +43,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\FemdAPI.Infrastructure\FemdAPI.Infrastructure.csproj" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\FemdAPI.Infrastructure.csproj" />
   </ItemGroup>
 
 

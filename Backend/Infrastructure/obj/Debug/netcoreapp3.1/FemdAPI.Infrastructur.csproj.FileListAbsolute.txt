@@ -1,0 +1,14 @@
+D:\Repozytoria\Femd\Backend\Infrastructure\bin\Debug\netcoreapp3.1\FemdAPI.Infrastructur.deps.json
+D:\Repozytoria\Femd\Backend\Infrastructure\bin\Debug\netcoreapp3.1\FemdAPI.Infrastructur.runtimeconfig.json
+D:\Repozytoria\Femd\Backend\Infrastructure\bin\Debug\netcoreapp3.1\FemdAPI.Infrastructur.runtimeconfig.dev.json
+D:\Repozytoria\Femd\Backend\Infrastructure\bin\Debug\netcoreapp3.1\FemdAPI.Infrastructur.dll
+D:\Repozytoria\Femd\Backend\Infrastructure\bin\Debug\netcoreapp3.1\FemdAPI.Infrastructur.pdb
+D:\Repozytoria\Femd\Backend\Infrastructure\bin\Debug\netcoreapp3.1\FemdAPI.Core.dll
+D:\Repozytoria\Femd\Backend\Infrastructure\bin\Debug\netcoreapp3.1\FemdAPI.Core.pdb
+D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructur.csprojAssemblyReference.cache
+D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructur.AssemblyInfoInputs.cache
+D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructur.AssemblyInfo.cs
+D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructur.csproj.CopyComplete
+D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructur.dll
+D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructur.pdb
+D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructur.genruntimeconfig.cache
