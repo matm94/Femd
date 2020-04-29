@@ -22,6 +22,7 @@ namespace FemdAPI.Infrastructure
                 if(!_femdAPIContext.UserDbSet.Any())
                 {
                     InsertData();
+                    InsertDataLecture();
                 }
                 
             }
@@ -29,11 +30,11 @@ namespace FemdAPI.Infrastructure
 
         private void InsertData()
         {
-            var _femdSampleData = new List<User>
+            var femdSampleData = new List<User>
             {
                 new User("WhiteWolf","Ciri","Butcher@gmail.com")
                 {
-                    Student = new Student("Geralt", "Expert")  
+                    Student = new Student("Geralt", "Expert")
                 },
 
                 new User("Yennefer","Geralt","Unicorn@gmail.com")
@@ -46,9 +47,27 @@ namespace FemdAPI.Infrastructure
                     Student = new Student("Ciri","Noob")
                 }
 
-            };
+            };                
+            _femdAPIContext.AddRange(femdSampleData);
+            _femdAPIContext.SaveChanges();
+        }
 
-            _femdAPIContext.AddRange(_femdSampleData);
+        private void InsertDataLecture()
+        {
+            var LectureSampleData = new List<Lecture>
+            {
+                new Lecture("Hello",1,Level.Beginner)
+                {
+                    Verbs = new List<Verb>()
+                    {
+                        new Verb("kommen","gekommen","kommten"),
+                        new Verb("bekommen","bekommen","bekommten"),
+                        new Verb("machen","gemacht","machten"),
+
+                    }
+                }
+            };
+            _femdAPIContext.AddRange(LectureSampleData);
             _femdAPIContext.SaveChanges();
         }
     }

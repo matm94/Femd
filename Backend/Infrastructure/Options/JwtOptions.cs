@@ -4,9 +4,9 @@ using System.Text;
 
 namespace FemdAPI.Infrastructure.Options
 {
-    class JwtOptions
+    public class JwtOptions
     {
-        public string Secret { get; set; }
+        public string SecretKey { get; set; }
 
     }
 }

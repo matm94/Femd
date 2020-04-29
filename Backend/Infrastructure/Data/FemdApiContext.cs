@@ -10,9 +10,11 @@ namespace FemdAPI.Core.Data
     {
         public DbSet<User> UserDbSet { get; set; }
         public DbSet<Student> StudentDbSet { get; set; }
-        
+        public DbSet<Lecture> LectureDbSet { get; set; }
+        public DbSet<Verb> VerbDbSet { get; set; }
 
-        private readonly string _connectionString = @"Data Source=MATM94\SQLEXPRESS;Initial Catalog=FemdApi;Integrated Security=True;Pooling=False";
+
+        private readonly string _connectionString = @"Data Source=MATM94\SQLEXPRESS;Initial Catalog=FemdAPIContext;Integrated Security=True;Pooling=False";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,6 +34,21 @@ namespace FemdAPI.Core.Data
                 .HasForeignKey<Student>(fk => fk.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<Lecture>()
+               .HasKey(k => k.Id);
+            modelBuilder.Entity<Lecture>()
+                .HasMany<Verb>(v => v.Verbs)
+                .WithOne(l => l.Lecture)
+                .HasForeignKey(fk => fk.LectureId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Lecture>()
+                .HasKey(k => k.Id);
+            modelBuilder.Entity<Lecture>()
+                .HasMany<Noun>(v => v.Nouns)
+                .WithOne(l => l.Lecture)
+                .HasForeignKey(fk => fk.LectureId)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
 

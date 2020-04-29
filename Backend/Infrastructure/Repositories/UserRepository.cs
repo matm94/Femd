@@ -17,10 +17,10 @@ namespace FemdAPI.Infrastructure.Repositories
         }
 
         public User GetUser(string email)
-            => _femdApiContext.UserDbSet.FirstOrDefault(m => m.Email.ToLower() == email.ToLower());
+            => _femdApiContext.UserDbSet.SingleOrDefault(m => m.Email.ToLower() == email.ToLower());
 
         public User GetUser(Guid id)
-            => _femdApiContext.UserDbSet.FirstOrDefault(m => m.Id == id);
+            => _femdApiContext.UserDbSet.SingleOrDefault(m => m.Id == id);
 
         public IEnumerable<User> GetAll()
             => _femdApiContext.UserDbSet.ToList();
@@ -33,14 +33,14 @@ namespace FemdAPI.Infrastructure.Repositories
 
         public void DeleteUser(Guid id)
         {
-            var user = _femdApiContext.UserDbSet.FirstOrDefault(m => m.Id == id);
+             var user = _femdApiContext.UserDbSet.SingleOrDefault(m => m.Id == id);
             _femdApiContext.UserDbSet.Remove(user);
             _femdApiContext.SaveChanges();
         }
 
         public void UpdateUser(User user)
         {
-             _femdApiContext.UserDbSet.Update(user);
+            _femdApiContext.UserDbSet.Update(user);
             _femdApiContext.SaveChanges();
 
         }

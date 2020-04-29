@@ -12,6 +12,7 @@ namespace FemdAPI.Infrastructure.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _imapper;
+
         public UserService(IUserRepository userRepository, IMapper imapper)
         {
             _userRepository = userRepository;
@@ -26,22 +27,51 @@ namespace FemdAPI.Infrastructure.Services
                 throw new Exception("Użytkownik o podanym emailu nie istnieje");
             }
 
-            var UserDTOs = _imapper.Map<UserDTO>(user);
-            return UserDTOs;
+            var userDTOs = _imapper.Map<UserDTO>(user);
+            return userDTOs;
+        }
+        public UserDTO Get(Guid id)
+        {
+            var user = _userRepository.GetUser(id);
+            if (user == null)
+            {
+                throw new Exception("Użytkownik o podanym id nie istnieje");
+            }
+
+            var userDTOs = _imapper.Map<UserDTO>(user);
+            return userDTOs;
         }
 
-        public void Create(string login, string email, string password)
+        public IEnumerable<UserDTO> GetAll()
+        {
+            var userAll = _userRepository.GetAll();
+            var userAllDtos = _imapper.Map<IEnumerable<UserDTO>>(userAll);
+            return userAllDtos;
+        }
+
+        public void Create(string login,string password, string email)
         {
             var user = _userRepository.GetUser(email);
             if (user != null)
             {
                 throw new Exception("Użytkownik o podanym emailu istnieje");
             }
-
             user = new User(login, password, email);
-            _userRepository.AddUser(user);
+           _userRepository.AddUser(user);
+
         }
 
-        
+        public void Delete(Guid id)
+        {
+            var user  = _userRepository.GetUser(id);
+            if (user == null)
+            {
+                throw new Exception("Użytkownik o podanym id nie istnieje");
+            }
+
+            _userRepository.DeleteUser(user.Id);
+        }
+
+
     }
 }

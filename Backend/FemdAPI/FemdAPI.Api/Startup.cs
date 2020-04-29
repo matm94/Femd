@@ -3,9 +3,9 @@ using FemdAPI.Core.Data;
 using FemdAPI.Core.Repositories;
 using FemdAPI.Infrastructure;
 using FemdAPI.Infrastructure.AutomapperProfile;
+using FemdAPI.Infrastructure.Options;
 using FemdAPI.Infrastructure.Repositories;
 using FemdAPI.Infrastructure.Services;
-using Jose;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,21 +30,59 @@ namespace FemdAPI.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddDbContext<FemdApiContext>();
             services.AddScoped<SampleData>();
+            services.AddControllers();
+            services.AddDbContext<FemdApiContext>();
+
+            services.AddScoped<JwtOptions>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ILectureRepository, LectureRepository>();
+            services.AddScoped<ILectureService, LectureService>();
+            services.AddScoped<IJwtService, JwtService>();
 
             services.AddAutoMapper(typeof(FemdProfile));
+            
+            //to do  -> DI and move to Options folder in Infrastructure all swagger configuration and jwt too
             services.AddSwaggerGen(cfg =>
             {
                 cfg.SwaggerDoc("V1", new OpenApiInfo() { Title = "FemdAPI", Version = "V1" });
+
+                cfg.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "JWT Authorization Token"
+                });
+
+                cfg.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    { 
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+
+                        },
+                    new string []{ }
+                    }
+                });
+
             });
 
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IUserService, UserService>();
 
-            //var jwtSettings = Configuration.GetSection("JwtSettings");
-            //services.Configure<JwtOptions>(jwtSettings);
+
+            var jwtSettingsSection = Configuration.GetSection("JwtSettings");
+            services.Configure<JwtOptions>(jwtSettingsSection);
+
+            var jwtSettings = jwtSettingsSection.Get<JwtOptions>();
+            var SecretKey = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
 
             services.AddAuthentication(opt =>
             {
@@ -53,35 +91,40 @@ namespace FemdAPI.Api
 
             }).AddJwtBearer(opt =>
             {
+                opt.SaveToken = true;
                 opt.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = false,
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = Configuration["JwtSettings"],
-                    ValidAudience = Configuration["JwtSettings"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSettings:Secret"]))
+                    IssuerSigningKey = new SymmetricSecurityKey(SecretKey),
+                    RequireExpirationTime = true,
+     
                 };
             });
 
-            services.AddControllers();
+            
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SampleData sampleData)
         {
-            app.UseSwagger();
-            app.UseSwaggerUI(cfg =>
-            {
-                cfg.SwaggerEndpoint("/swagger/V1/swagger.json", "FemdApi");
-            });
-
+      
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(cfg =>
+            {
+                cfg.SwaggerEndpoint("/swagger/V1/swagger.json", "FemdApi");
+
+            });
+
 
             app.UseHttpsRedirection();
 

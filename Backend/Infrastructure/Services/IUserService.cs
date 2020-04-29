@@ -8,6 +8,9 @@ namespace FemdAPI.Infrastructure.Services
     public interface IUserService
     {
         UserDTO Get(string email);
-        void Create(string login, string email, string password);
+        UserDTO Get(Guid id);
+        IEnumerable<UserDTO> GetAll();
+        void Create(string login, string password, string email);
+        void Delete(Guid id);
     }
 }

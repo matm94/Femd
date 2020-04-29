@@ -27,23 +27,35 @@
     <Compile Remove="Migrations\20200228130727_Poczatkowa.Designer.cs" />
     <Compile Remove="Migrations\20200229121050_Poczatkowa.cs" />
     <Compile Remove="Migrations\20200229121050_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\FemdApiContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20200420195329_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200420195329_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200420195458_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200420195458_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200420195751_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200420195751_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200421093639_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200421093639_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200421094813_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200421094813_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200421192040_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200421192040_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200421195608_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200421195608_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200425183235_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200425183235_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200425184125_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200425184125_Poczatkowa.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
-    <PackageReference Include="jose-jwt" Version="2.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
   </ItemGroup>
 
   <ItemGroup>
