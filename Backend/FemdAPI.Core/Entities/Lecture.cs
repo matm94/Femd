@@ -24,8 +24,9 @@ namespace FemdAPI.Core.Entities
         {
             Name = name;
             Number = number;
-            Level = new Level();          
+            Level = new Level();
         }
+
 
     }
 }

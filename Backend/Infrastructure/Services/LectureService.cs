@@ -49,7 +49,7 @@ namespace FemdAPI.Infrastructure.Services
             return lectureAllDtos;
         }
 
-        public void Create(LectureDTO model, VerbDTO verb)
+        public void Create(LectureDTO model)
         {
             var lecture = _mapper.Map<Lecture>(model);
             lecture = _lectureRepository.Get(model.Name);
@@ -57,16 +57,10 @@ namespace FemdAPI.Infrastructure.Services
             {
                 throw new Exception("Wyklad o podanej nazwie istnieje");
             }
-            lecture = new Lecture(model.Name, model.Number, model.Level)
-            {
-                Verbs = new List<Verb>()
-                {
-                    new Verb(verb.Infinitive, verb.PastPartizip, verb.PastPrateritum)
-                },
-
-            };
+            lecture = new Lecture(model.Name, model.Number, model.Level);
             _lectureRepository.AddLecture(lecture);
         }
+
 
         public void Delete(Guid id)
         {

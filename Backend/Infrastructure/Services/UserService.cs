@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FemdAPI.Core.Entities;
 using FemdAPI.Core.Repositories;
+using FemdAPI.Infrastructure.Extensions;
 using FemdAPI.Infrastructure.Models;
 using System;
 using System.Collections.Generic;
@@ -21,23 +22,13 @@ namespace FemdAPI.Infrastructure.Services
 
         public UserDTO Get(string email)
         {
-            var user = _userRepository.GetUser(email);
-            if (user == null)
-            {
-                throw new Exception("Użytkownik o podanym emailu nie istnieje");
-            }
-
+            var user = _userRepository.GetUserOrNull(email);
             var userDTOs = _imapper.Map<UserDTO>(user);
             return userDTOs;
         }
         public UserDTO Get(Guid id)
         {
-            var user = _userRepository.GetUser(id);
-            if (user == null)
-            {
-                throw new Exception("Użytkownik o podanym id nie istnieje");
-            }
-
+            var user = _userRepository.GetUserOrNull(id);
             var userDTOs = _imapper.Map<UserDTO>(user);
             return userDTOs;
         }
@@ -51,11 +42,7 @@ namespace FemdAPI.Infrastructure.Services
 
         public void Create(string login,string password, string email)
         {
-            var user = _userRepository.GetUser(email);
-            if (user != null)
-            {
-                throw new Exception("Użytkownik o podanym emailu istnieje");
-            }
+            var user = _userRepository.GetUserOrFail(email);
             user = new User(login, password, email);
            _userRepository.AddUser(user);
 
@@ -63,12 +50,7 @@ namespace FemdAPI.Infrastructure.Services
 
         public void Delete(Guid id)
         {
-            var user  = _userRepository.GetUser(id);
-            if (user == null)
-            {
-                throw new Exception("Użytkownik o podanym id nie istnieje");
-            }
-
+            var user  = _userRepository.GetUserOrNull(id);
             _userRepository.DeleteUser(user.Id);
         }
 
