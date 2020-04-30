@@ -45,6 +45,8 @@
     <Compile Remove="Migrations\20200425183235_Poczatkowa.Designer.cs" />
     <Compile Remove="Migrations\20200425184125_Poczatkowa.cs" />
     <Compile Remove="Migrations\20200425184125_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20200425184705_Poczatkowa.cs" />
+    <Compile Remove="Migrations\20200425184705_Poczatkowa.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

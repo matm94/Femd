@@ -32,20 +32,11 @@ namespace FemdAPI.Infrastructure
         {
             var femdSampleData = new List<User>
             {
-                new User("WhiteWolf","Ciri","Butcher@gmail.com")
-                {
-                    Student = new Student("Geralt", "Expert")
-                },
+                new User("WhiteWolf","Ciri","Butcher@gmail.com"),
 
-                new User("Yennefer","Geralt","Unicorn@gmail.com")
-                {
-                    Student = new Student("Yen","Master")
-                },
+                new User("Yennefer","Geralt","Unicorn@gmail.com"),
 
                 new User("Ciranell","Ciria","Princess@gmail.com")
-                {
-                    Student = new Student("Ciri","Noob")
-                }
 
             };                
             _femdAPIContext.AddRange(femdSampleData);

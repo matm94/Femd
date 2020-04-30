@@ -27,7 +27,7 @@ namespace FemdAPI.Core.Entities
         public string Email { get; protected set; }
         public DateTime UpdatedAt{ get; protected set; }
         public bool IsActive { get; protected set; }
-        public Student Student { get; set; }
+
 
         public User(string login, string password, string email)
         {

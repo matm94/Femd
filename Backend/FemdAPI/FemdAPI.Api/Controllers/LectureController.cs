@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FemdAPI.Infrastructure.Commands.Lectures;
 using FemdAPI.Infrastructure.Models;
 using FemdAPI.Infrastructure.Services;
 using Microsoft.AspNetCore.Http;
@@ -35,10 +36,10 @@ namespace FemdAPI.Api.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] LectureDTO model)
+        public ActionResult Post([FromBody] CreateLecture command)
         {
-            _lectureService.Create(model);
-            return Created("api/[controller]/" + model.Name, null);
+            _lectureService.Create(command.Name,command.Number,command.Level);
+            return Created("api/[controller]/" + command.Name, null);
         }
 
         [HttpDelete("{id}")]

@@ -39,27 +39,30 @@ namespace FemdAPI.Api.Migrations
                     b.ToTable("LectureDbSet");
                 });
 
-            modelBuilder.Entity("FemdAPI.Core.Entities.Student", b =>
+            modelBuilder.Entity("FemdAPI.Core.Entities.Noun", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Level")
+                    b.Property<string>("Feminine")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("GenderNeutral")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid>("LectureId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Masculine")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("LectureId");
 
-                    b.ToTable("StudentDbSet");
+                    b.ToTable("NounDbSet");
                 });
 
             modelBuilder.Entity("FemdAPI.Core.Entities.User", b =>
@@ -124,11 +127,11 @@ namespace FemdAPI.Api.Migrations
                     b.ToTable("VerbDbSet");
                 });
 
-            modelBuilder.Entity("FemdAPI.Core.Entities.Student", b =>
+            modelBuilder.Entity("FemdAPI.Core.Entities.Noun", b =>
                 {
-                    b.HasOne("FemdAPI.Core.Entities.User", "User")
-                        .WithOne("Student")
-                        .HasForeignKey("FemdAPI.Core.Entities.Student", "UserId")
+                    b.HasOne("FemdAPI.Core.Entities.Lecture", "Lecture")
+                        .WithMany("Nouns")
+                        .HasForeignKey("LectureId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

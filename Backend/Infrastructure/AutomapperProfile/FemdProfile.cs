@@ -11,16 +11,11 @@ namespace FemdAPI.Infrastructure.AutomapperProfile
     {
         public FemdProfile()
         {
-            CreateMap<User, UserDTO>()
-                .ReverseMap();
-            CreateMap<Lecture, LectureDTO>()
-                .ReverseMap();
-            CreateMap<Verb, VerbDTO>()
-                .ReverseMap();
-            CreateMap<Noun, NounDTO>()
-                .ReverseMap();
-
-
+            CreateMap<User, UserDTO>();
+            CreateMap<Lecture, LectureDTO>();
+            CreateMap<Lecture, LectureDetailsDTO>();
+            CreateMap<Verb, VerbDTO>();
+            CreateMap<Noun, NounDTO>();
 
         }
 

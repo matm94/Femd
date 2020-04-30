@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FemdAPI.Core.Entities;
 using FemdAPI.Core.Repositories;
+using FemdAPI.Infrastructure.Extensions;
 using FemdAPI.Infrastructure.Models;
 using System;
 using System.Collections.Generic;
@@ -18,57 +19,38 @@ namespace FemdAPI.Infrastructure.Services
             _lectureRepository = lectureRepository;
             _mapper = mapper;   
         }
-        public LectureDTO Get(string name)
+        public LectureDetailsDTO Get(string name)
         {
-            var lecture = _lectureRepository.Get(name);
-            if (lecture == null)
-            {
-                throw new Exception("Wyklad o podanej nazwie nie istnieje");
-            }
-
-            var lectureDtos = _mapper.Map<LectureDTO>(lecture);
+            var lecture = _lectureRepository.GetLectureOrNull(name);
+            var lectureDtos = _mapper.Map<LectureDetailsDTO>(lecture);
             return lectureDtos;
         }
 
-        public LectureDTO Get(Guid id)
+        public LectureDetailsDTO Get(Guid id)
         {
-            var lecture = _lectureRepository.Get(id);
-            if (lecture == null)
-            {
-                throw new Exception("Wyklad o podanym id nieistnieje");
-            }
-
-            var lectureDtos = _mapper.Map<LectureDTO>(lecture);
+            var lecture = _lectureRepository.GetLectureOrNull(id);
+            var lectureDtos = _mapper.Map<LectureDetailsDTO>(lecture);
             return lectureDtos;
         }
 
-        public IEnumerable<LectureDTO> GetAll()
+        public IEnumerable<LectureDetailsDTO> GetAll()
         {
             var letureAll = _lectureRepository.GetAll();
-            var lectureAllDtos = _mapper.Map<IEnumerable<LectureDTO>>(letureAll);
+            var lectureAllDtos = _mapper.Map<IEnumerable<LectureDetailsDTO>>(letureAll);
             return lectureAllDtos;
         }
 
-        public void Create(LectureDTO model)
-        {
-            var lecture = _mapper.Map<Lecture>(model);
-            lecture = _lectureRepository.Get(model.Name);
-            if (lecture != null)
-            {
-                throw new Exception("Wyklad o podanej nazwie istnieje");
-            }
-            lecture = new Lecture(model.Name, model.Number, model.Level);
+        public void Create(string name, int number, Level level)
+        { 
+            var lecture = _lectureRepository.GetLectureOrFail(name);
+            lecture = new Lecture(name,number,level);
             _lectureRepository.AddLecture(lecture);
         }
 
 
         public void Delete(Guid id)
         {
-            var lecture = _lectureRepository.Get(id);
-            if (lecture == null)
-            {
-                throw new Exception("Wyklad o podanym id nie istnieje");
-            }
+            var lecture = _lectureRepository.GetLectureOrNull(id);
             _lectureRepository.DeleteLecture(lecture.Id);
         }
 

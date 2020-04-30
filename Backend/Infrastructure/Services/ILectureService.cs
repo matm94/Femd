@@ -1,4 +1,5 @@
-﻿using FemdAPI.Infrastructure.Models;
+﻿using FemdAPI.Core.Entities;
+using FemdAPI.Infrastructure.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,10 +8,10 @@ namespace FemdAPI.Infrastructure.Services
 {
     public interface ILectureService
     {
-        LectureDTO Get(string name);
-        LectureDTO Get(Guid id);
-        IEnumerable<LectureDTO> GetAll();
-        void Create(LectureDTO lectureDTO);
+        LectureDetailsDTO Get(string name);
+        LectureDetailsDTO Get(Guid id);
+        IEnumerable<LectureDetailsDTO> GetAll();
+        void Create(string name, int number, Level level);
         void Delete(Guid id);
     }
 }

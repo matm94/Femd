@@ -9,9 +9,9 @@ namespace FemdAPI.Core.Data
     public class FemdApiContext : DbContext
     {
         public DbSet<User> UserDbSet { get; set; }
-        public DbSet<Student> StudentDbSet { get; set; }
         public DbSet<Lecture> LectureDbSet { get; set; }
         public DbSet<Verb> VerbDbSet { get; set; }
+        public DbSet<Noun> NounDbSet { get; set; }
 
 
         private readonly string _connectionString = @"Data Source=MATM94\SQLEXPRESS;Initial Catalog=FemdAPIContext;Integrated Security=True;Pooling=False";
@@ -25,19 +25,10 @@ namespace FemdAPI.Core.Data
         {
             modelBuilder.ApplyConfigurationsFromAssembly((typeof(FemdApiContext).Assembly));
 
-            modelBuilder.Entity<User>()
-                .HasKey(k => k.Id);
-                
-            modelBuilder.Entity<User>()
-                .HasOne<Student>(s => s.Student)
-                .WithOne(u => u.User)
-                .HasForeignKey<Student>(fk => fk.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
-
             modelBuilder.Entity<Lecture>()
                .HasKey(k => k.Id);
             modelBuilder.Entity<Lecture>()
-                .HasMany<Verb>(v => v.Verbs)
+                .HasMany(v => v.Verbs)
                 .WithOne(l => l.Lecture)
                 .HasForeignKey(fk => fk.LectureId)
                 .OnDelete(DeleteBehavior.Cascade);
@@ -45,7 +36,7 @@ namespace FemdAPI.Core.Data
             modelBuilder.Entity<Lecture>()
                 .HasKey(k => k.Id);
             modelBuilder.Entity<Lecture>()
-                .HasMany<Noun>(v => v.Nouns)
+                .HasMany(v => v.Nouns)
                 .WithOne(l => l.Lecture)
                 .HasForeignKey(fk => fk.LectureId)
                 .OnDelete(DeleteBehavior.Cascade);
