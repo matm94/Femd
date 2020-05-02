@@ -11,6 +11,7 @@ using System.Collections.Generic;
 namespace FemdAPI.Api.Controllers
 {
     [Route("[Controller]")]
+    [Authorize(Policy = "ADMIN")]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -34,12 +35,6 @@ namespace FemdAPI.Api.Controllers
             return Ok(user);
         }
 
-        [HttpPost]
-        public ActionResult Post([FromBody] CreateUser command)
-        {
-            _userService.Create(command.Login, command.Password, command.Email);
-            return Created("/users/" + command.Email, null);
-        }
 
         [HttpDelete("{id}")]
         public ActionResult Delete(Guid id)

@@ -7,6 +7,6 @@ namespace FemdAPI.Infrastructure.Services
 {
     public interface IJwtService
     {
-         string CreatToken(string email,string role);
+        JwtDTO CreateToken(Guid id, string role);
     }
 }

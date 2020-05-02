@@ -42,6 +42,7 @@ namespace FemdAPI.Api
             services.AddScoped<IJwtService, JwtService>();
 
             services.AddAutoMapper(typeof(FemdProfile));
+            services.AddAuthorization(x => x.AddPolicy("ADMIN", x => x.RequireRole("admin")));
             
             //to do  -> DI and move to Options folder in Infrastructure all swagger configuration and jwt too
             services.AddSwaggerGen(cfg =>
@@ -76,13 +77,12 @@ namespace FemdAPI.Api
 
             });
 
-
-
             var jwtSettingsSection = Configuration.GetSection("JwtSettings");
             services.Configure<JwtOptions>(jwtSettingsSection);
 
             var jwtSettings = jwtSettingsSection.Get<JwtOptions>();
             var SecretKey = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
+
 
             services.AddAuthentication(opt =>
             {
@@ -91,21 +91,17 @@ namespace FemdAPI.Api
 
             }).AddJwtBearer(opt =>
             {
-                opt.SaveToken = true;
                 opt.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = false,
+                    ValidIssuer = jwtSettings.Issuer,
                     ValidateAudience = false,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = Configuration["JwtSettings"],
-                    IssuerSigningKey = new SymmetricSecurityKey(SecretKey),
-                    RequireExpirationTime = true,
-     
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes(jwtSettings.SecretKey)),
+
                 };
             });
 
-            
+
 
         }
 
@@ -124,7 +120,6 @@ namespace FemdAPI.Api
                 cfg.SwaggerEndpoint("/swagger/V1/swagger.json", "FemdApi");
 
             });
-
 
             app.UseHttpsRedirection();
 

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FemdAPI.Api.Migrations
 {
     [DbContext(typeof(FemdApiContext))]
-    [Migration("20200430183902_Poczatkowa")]
+    [Migration("20200501175118_Poczatkowa")]
     partial class Poczatkowa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,7 +89,7 @@ namespace FemdAPI.Api.Migrations
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
-                    b.Property<string>("Token")
+                    b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedAt")

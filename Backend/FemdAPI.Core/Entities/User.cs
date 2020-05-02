@@ -21,7 +21,7 @@ namespace FemdAPI.Core.Entities
         [MinLength(3, ErrorMessage = "Minimalna ilosc znakow 3")]
         [MaxLength(30, ErrorMessage = "Maksymalna ilosc znakow 3")]
         public string Password { get; protected set; }
-        public string Token { get; protected set; }
+        public string Role { get; protected set; } 
 
         [EmailAddress(ErrorMessage ="Nieprawidłowy format")]
         public string Email { get; protected set; }
@@ -29,13 +29,14 @@ namespace FemdAPI.Core.Entities
         public bool IsActive { get; protected set; }
 
 
-        public User(string login, string password, string email)
+        public User(string login, string password, string email, string role)
         {
             Id = Guid.NewGuid();
             Login = login;
             Password = password;
             Email = email;
             UpdatedAt = DateTime.UtcNow;
+            Role = role;
         }
 
         //public void SetLogin(string login)

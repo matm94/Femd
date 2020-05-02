@@ -13,11 +13,13 @@ namespace FemdAPI.Infrastructure.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _imapper;
+        private readonly IJwtService _jwtService;
 
-        public UserService(IUserRepository userRepository, IMapper imapper)
+        public UserService(IUserRepository userRepository, IMapper imapper, IJwtService jwtService)
         {
             _userRepository = userRepository;
             _imapper = imapper;
+            _jwtService = jwtService;
         }
 
         public UserDTO Get(string email)
@@ -33,6 +35,13 @@ namespace FemdAPI.Infrastructure.Services
             return userDTOs;
         }
 
+        public AccountDTO GetAccount(Guid id)
+        {
+            var userAccount = _userRepository.GetUserOrNull(id);
+            var userAccountDtos = _imapper.Map<AccountDTO>(userAccount);
+            return userAccountDtos;
+        }
+
         public IEnumerable<UserDTO> GetAll()
         {
             var userAll = _userRepository.GetAll();
@@ -40,12 +49,28 @@ namespace FemdAPI.Infrastructure.Services
             return userAllDtos;
         }
 
-        public void Create(string login,string password, string email)
+        public void Create(string login,string password, string email, string role)
         {
             var user = _userRepository.GetUserOrFail(email);
-            user = new User(login, password, email);
+            user = new User(login, password, email, role);
            _userRepository.AddUser(user);
 
+        }
+        public TokenDTO Login(string email, string password)
+        {
+            var user = _userRepository.GetUserOrNull(email);
+            if(user.Password != password)
+            {
+                throw new Exception("Invaild password");
+            }
+            var jwt = _jwtService.CreateToken(user.Id, user.Role);
+
+            return new TokenDTO
+            {
+                Token = jwt.Token,
+                LifeTime = jwt.LifeTime,
+                Role = user.Role
+            };
         }
 
         public void Delete(Guid id)
@@ -53,7 +78,6 @@ namespace FemdAPI.Infrastructure.Services
             var user  = _userRepository.GetUserOrNull(id);
             _userRepository.DeleteUser(user.Id);
         }
-
 
     }
 }

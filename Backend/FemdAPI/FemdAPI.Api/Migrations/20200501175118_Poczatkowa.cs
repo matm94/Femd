@@ -28,7 +28,7 @@ namespace FemdAPI.Api.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     Login = table.Column<string>(maxLength: 30, nullable: false),
                     Password = table.Column<string>(maxLength: 30, nullable: false),
-                    Token = table.Column<string>(nullable: true),
+                    Role = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     UpdatedAt = table.Column<DateTime>(nullable: false),
                     IsActive = table.Column<bool>(nullable: false)
