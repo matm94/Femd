@@ -22,13 +22,12 @@ namespace FemdAPI.Api.Controllers
             _userService = userService;
         }
 
-
-        [HttpGet("{email}")]
+        [HttpGet]
         [Authorize]
         public ActionResult<AccountDTO> Get()
         {
-            var user = _userService.GetAccount(userId);
-            return Ok(user);
+            var identityUser = _userService.GetAccount(UserId);
+            return Ok(identityUser);
         }
             
         [HttpPost("Register")]

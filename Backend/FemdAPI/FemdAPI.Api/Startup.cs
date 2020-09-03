@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System;
 using System.Text;
 
 namespace FemdAPI.Api
@@ -75,6 +76,8 @@ namespace FemdAPI.Api
                     }
                 });
 
+                services.AddCors();
+
             });
 
             var jwtSettingsSection = Configuration.GetSection("JwtSettings");
@@ -88,16 +91,30 @@ namespace FemdAPI.Api
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                
+                opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
 
             }).AddJwtBearer(opt =>
             {
+                opt.RequireHttpsMetadata = false;
+                opt.SaveToken = false;
+
                 opt.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidIssuer = jwtSettings.Issuer,
-                    ValidateAudience = false,
+
+                    ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(
                         Encoding.UTF8.GetBytes(jwtSettings.SecretKey)),
+                    ValidIssuer = jwtSettings.Issuer,
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero,
 
+                    /* ValidIssuer = jwtSettings.Issuer,
+                     ValidateAudience = false,
+                     IssuerSigningKey = new SymmetricSecurityKey(
+                         Encoding.UTF8.GetBytes(jwtSettings.SecretKey)),
+                    */
                 };
             });
 
@@ -121,6 +138,11 @@ namespace FemdAPI.Api
 
             });
 
+            app.UseCors(builder =>
+                builder.WithOrigins("http://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -135,6 +157,8 @@ namespace FemdAPI.Api
             });
 
             sampleData.GetSampleData();
+
+
         }
     }
 }

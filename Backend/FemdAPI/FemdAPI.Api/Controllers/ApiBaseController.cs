@@ -11,9 +11,8 @@ namespace FemdAPI.Api.Controllers
     [ApiController]
     public class ApiBaseController : ControllerBase
     {
-        protected Guid userId => User?.Identity?.IsAuthenticated == true ?
-            Guid.Parse(User.Identity.Name) :
-            Guid.Empty;
+        protected Guid UserId => User?.Identity?.IsAuthenticated == true ?
+            Guid.Parse(User.Identity.Name) : Guid.Empty;
 
     }
 }

@@ -1,5 +1,5 @@
 ﻿using FemdAPI.Core.Data;
-using FemdAPI.Core.Entities;
+using FemdAPI.Core.Domains;
 using FemdAPI.Infrastructure.Commands.Users;
 using FemdAPI.Infrastructure.Models;
 using FemdAPI.Infrastructure.Services;
@@ -15,7 +15,6 @@ namespace FemdAPI.Api.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-
         public UserController(IUserService userService)
         {
             _userService = userService;
@@ -27,21 +26,17 @@ namespace FemdAPI.Api.Controllers
             var user = _userService.Get(email);
             return Ok(user);
         }
-
         [HttpGet]
         public ActionResult<IEnumerable<UserDTO>> GetAll()
         {
             var user = _userService.GetAll();
             return Ok(user);
         }
-
-
         [HttpDelete("{id}")]
         public ActionResult Delete(Guid id)
         {
             _userService.Delete(id);
             return NoContent();
-
         }
 
     }

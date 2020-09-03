@@ -1,4 +1,4 @@
-﻿using FemdAPI.Core.Entities;
+﻿using FemdAPI.Core.Domains;
 using FemdAPI.Core.Repositories;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,5 @@
 ﻿using FemdAPI.Core.Data;
-using FemdAPI.Core.Entities;
+using FemdAPI.Core.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;

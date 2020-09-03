@@ -1,4 +1,4 @@
-﻿using FemdAPI.Core.Entities;
+﻿using FemdAPI.Core.Domains;
 using System;
 using System.Collections.Generic;
 using System.Text;

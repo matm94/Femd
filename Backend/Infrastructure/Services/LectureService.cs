@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FemdAPI.Core.Entities;
+using FemdAPI.Core.Domains;
 using FemdAPI.Core.Repositories;
 using FemdAPI.Infrastructure.Extensions;
 using FemdAPI.Infrastructure.Models;

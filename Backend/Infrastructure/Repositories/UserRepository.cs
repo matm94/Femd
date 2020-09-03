@@ -1,5 +1,5 @@
 ﻿using FemdAPI.Core.Data;
-using FemdAPI.Core.Entities;
+using FemdAPI.Core.Domains;
 using FemdAPI.Core.Repositories;
 using System;
 using System.Collections.Generic;
@@ -18,31 +18,25 @@ namespace FemdAPI.Infrastructure.Repositories
 
         public User GetUser(string email)
             => _femdApiContext.UserDbSet.SingleOrDefault(m => m.Email.ToLower() == email.ToLower());
-
         public User GetUser(Guid id)
             => _femdApiContext.UserDbSet.SingleOrDefault(m => m.Id == id);
-
         public IEnumerable<User> GetAll()
             => _femdApiContext.UserDbSet.ToList();
-
         public void AddUser(User user)
         {
             _femdApiContext.UserDbSet.Add(user);
             _femdApiContext.SaveChanges();
         }
-
         public void DeleteUser(Guid id)
         {
              var user = _femdApiContext.UserDbSet.SingleOrDefault(m => m.Id == id);
             _femdApiContext.UserDbSet.Remove(user);
             _femdApiContext.SaveChanges();
         }
-
         public void UpdateUser(User user)
         {
             _femdApiContext.UserDbSet.Update(user);
             _femdApiContext.SaveChanges();
-
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FemdAPI.Core.Entities;
+using FemdAPI.Core.Domains;
 using FemdAPI.Infrastructure.Models;
 using System;
 using System.Collections.Generic;

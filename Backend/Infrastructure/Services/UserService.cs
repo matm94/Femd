@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FemdAPI.Core.Entities;
+using FemdAPI.Core.Domains;
 using FemdAPI.Core.Repositories;
 using FemdAPI.Infrastructure.Extensions;
 using FemdAPI.Infrastructure.Models;
@@ -72,7 +72,6 @@ namespace FemdAPI.Infrastructure.Services
                 Role = user.Role
             };
         }
-
         public void Delete(Guid id)
         {
             var user  = _userRepository.GetUserOrNull(id);

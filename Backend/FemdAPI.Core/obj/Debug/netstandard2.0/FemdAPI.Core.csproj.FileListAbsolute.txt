@@ -6,3 +6,4 @@ D:\Repozytoria\Femd\Backend\FemdAPI.Core\obj\Debug\netstandard2.0\FemdAPI.Core.A
 D:\Repozytoria\Femd\Backend\FemdAPI.Core\bin\Debug\netstandard2.0\FemdAPI.Core.pdb
 D:\Repozytoria\Femd\Backend\FemdAPI.Core\obj\Debug\netstandard2.0\FemdAPI.Core.dll
 D:\Repozytoria\Femd\Backend\FemdAPI.Core\obj\Debug\netstandard2.0\FemdAPI.Core.pdb
+D:\Repozytoria\Femd\Backend\FemdAPI.Core\obj\Debug\netstandard2.0\FemdAPI.Core.csproj.CoreCompileInputs.cache

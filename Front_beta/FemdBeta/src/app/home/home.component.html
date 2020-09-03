@@ -1,0 +1,66 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand text-white">
+    <i class="icon-list" > FEMD </i>
+  </a>
+  <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">
+    <i class="icon-off" > Wyloguj  </i>
+
+  </button>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+        <div class="tile-md">
+          <i class="icon-plus-squared" > Nowa Lekcja</i>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="tile-md">
+          <i class="icon-loop"> Powtórki</i>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="tile-md-2">
+          <i class="icon-book"> Słówka </i>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="tile-md-2">
+          <i class="icon-folder-open"> Lekcje </i>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+    <div class="col-sm-3">
+        <div class="tile-md-3">
+          <i class="icon-star"> Quiz </i>
+        </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="tile-md-3">
+        <i class="icon-clipboard"> Top 10 </i>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="tile-lg-2"></div>
+    </div>
+    <div class="col-sm-3">
+      <div class="tile-md-3">
+        <i class="icon-address-card"> Mój Profil </i>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="tile-md-3">
+        <i class="icon-cog-1"> Ustawienia </i>
+      </div>
+    </div>
+    <footer class="foot"> Wszystkie Prawa Zastrzeżone </footer>
+</div>
+
+<div class="card m-5" style="width:250px" *ngIf="userData">
+  <ul class="list-group">
+    <li class="list-group-item"><strong>id: </strong>{{userData.id}} </li>
+    <li class="list-group-item"><strong>login: </strong>{{userData.login}} </li>
+    <li class="list-group-item"><strong>email: </strong>{{userData.email}} </li>
+    <li class="list-group-item"><strong>role: </strong>{{userData.role}} </li>
+  </ul>
+</div>

@@ -12,3 +12,4 @@ D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infra
 D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructure.pdb
 D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructure.genruntimeconfig.cache
 D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructure.csprojAssemblyReference.cache
+D:\Repozytoria\Femd\Backend\Infrastructure\obj\Debug\netcoreapp3.1\FemdAPI.Infrastructure.csproj.CoreCompileInputs.cache
