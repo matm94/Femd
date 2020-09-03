@@ -1,9 +1,0 @@
-<div>
-  <div> Wykonane zadania: {{doneTasks.length}}</div>
-  Zadania wykonane
-  <div appChecked appDate [date] = "task.end" *ngFor="let task of doneTasks">
-    <li>
-      {{task.name  | transformTask: '!'}}
-    </li>
-  </div>
-</div>
