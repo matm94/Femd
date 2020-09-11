@@ -1,65 +1,71 @@
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand text-white">
-    <i class="icon-list" > FEMD </i>
-  </a>
-  <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">
-    <i class="icon-off" > Wyloguj  </i>
-
-  </button>
-</nav>
-
+<app-nav-bar></app-nav-bar>
 <div class="container-fluid" >
     <div class="row">
       <div class="col-sm-6 col-md-3 ">
-        <div class="tile-md"  >
-          <i class="icon-plus-squared" > Nowa Lekcja</i>
-        </div>
+        <a routerLink="newLesson" routerLinkActive="active" (click)="goNewLesson()">
+          <div class="tile-md"  >
+            <i class="icon-plus-squared" > Nowa Lekcja</i>
+          </div>
+        </a>
       </div>
       <div class="col-sm-6 col-md-3 ">
-        <div class="tile-md" >
-          <i class="icon-loop"> Powtórki</i>
-        </div>
+        <a routerLink="repeats" routerLinkActive="active"(click)="goRepeats()">
+          <div class="tile-md" >
+            <i class="icon-loop"> Powtórki</i>
+          </div>
+        </a>
       </div>
       <div class="col-sm-6 col-md-6 col-lg-6">
         <div class="tile-lg-2"> Best user </div>
       </div>
       <div class="col-sm-6 col-md-3 ">
-        <div class="tile-md-2" >
-          <i class="icon-book"> Słówka </i>
-        </div>
+        <a routerLink="words" routerLinkActive="active" (click)="goWords()">
+          <div class="tile-md-2" >
+            <i class="icon-book"> Słówka </i>
+          </div>
+        </a>
       </div>
       <div class="col-sm-6 col-md-3 ">
-        <div class="tile-md-2">
-           <i class="icon-folder-open"> Lekcje </i>
-        </div>
+        <a routerLink="lessons" routerLinkActive="active"(click)="goLessons()" >
+          <div class="tile-md-2">
+            <i class="icon-folder-open"> Lekcje </i>
+         </div>
+        </a>
       </div>
       <div class="col-sm-6 col-md-6 col-lg-6">
         <div class="tile-lg-2"> Cos </div>
       </div>
       <div class="col-sm-6 col-md-3 ">
-        <div class="tile-md-3">
-          <i class="icon-star"> Quiz </i>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 ">
-        <div class="tile-md-3">
-          <i class="icon-clipboard"> Top 10 </i>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 ">
+        <a routerLink="quiz" routerLinkActive="active" (click)="goQuiz()">
           <div class="tile-md-3">
-            <i class="icon-address-card"> Mój Profil </i>
+              <i class="icon-star"> Quiz </i>
           </div>
+        </a>
       </div>
       <div class="col-sm-6 col-md-3 ">
+        <a routerLink="topTen" routerLinkActive="active" (click)="goTopTen()">
+          <div class="tile-md-3">
+            <i class="icon-clipboard"> Top 10 </i>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-3 ">
+        <a routerLink="userProfile" routerLinkActive="active" (click)="goProfile()">
+          <div class="tile-md-3">
+              <i class="icon-address-card"> Mój Profil </i>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-3 ">
+        <a routerLink="settings" routerLinkActive="active" (click)="goSettings()">
           <div class="tile-md-3" >
             <i class="icon-cog-1"> Ustawienia </i>
-          </div>
+        </div>
+        </a>
       </div>
     </div>
     <footer class="foot"> Wszystkie Prawa Zastrzeżone </footer>
 </div>
-
 
 <div class="card m-5" style="width:250px" *ngIf="userData">
   <ul class="list-group">
@@ -69,3 +75,4 @@
     <li class="list-group-item"><strong>role: </strong>{{userData.role}} </li>
   </ul>
 </div>
+

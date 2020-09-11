@@ -97,6 +97,7 @@ div.form-group label:first-child{
   height: auto;
   min-height: 145px;
   margin-bottom: 10px;
+  margin-top: 20px;
   background-color:  #8f8787;
 }
 .tile-lg-2:hover
@@ -109,6 +110,7 @@ div.form-group label:first-child{
   height: auto;
   min-height: 145px;
   margin-bottom: 10px;
+  margin-top: 20px;
   background-color: #0c79df;
 }
 .tile-md:hover
@@ -122,6 +124,7 @@ div.form-group label:first-child{
   height: auto;
   min-height: 145px;
   margin-bottom: 10px;
+  margin-top: 20px;
   background-color: #0ba706;
 }
 .tile-md-2:hover
@@ -134,6 +137,7 @@ div.form-group label:first-child{
   height: auto;
   min-height: 145px;
   margin-bottom: 10px;
+  margin-top: 20px;
   background-color: #e04801;
 }
 .tile-md-3:hover
