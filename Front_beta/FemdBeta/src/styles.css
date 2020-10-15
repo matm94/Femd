@@ -162,4 +162,10 @@ i.icon-list:hover
   font-size: 20px;
   text-align: center;
 }
+a.tileLink
+{
+  color: #fff;
+  text-decoration: none;
+}
+
 

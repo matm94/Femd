@@ -7,8 +7,9 @@ namespace FemdAPI.Infrastructure.Models
 {
     public class LectureDTO
     {
-        public string Name { get;  set; }
-        public int Number { get;  set; }
-        public Level Level { get; set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public int Number { get; set; }
+        public string Description { get; set; }
     }
 }

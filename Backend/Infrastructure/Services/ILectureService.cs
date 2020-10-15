@@ -8,10 +8,10 @@ namespace FemdAPI.Infrastructure.Services
 {
     public interface ILectureService
     {
-        LectureDetailsDTO Get(string name);
-        LectureDetailsDTO Get(Guid id);
-        IEnumerable<LectureDetailsDTO> GetAll();
-        void Create(string name, int number, Level level);
+        WordsDictionaryDTO Get(Guid id);
+        LectureDTO Get(string name);
+        IEnumerable<LectureDTO> GetAll();
+        void Create(string name, int number, string description);
         void Delete(Guid id);
     }
 }

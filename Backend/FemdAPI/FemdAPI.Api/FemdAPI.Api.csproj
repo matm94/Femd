@@ -5,62 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200222213821_poczatkowa.cs" />
-    <Compile Remove="Migrations\20200222213821_poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200222214618_poczatkowa.cs" />
-    <Compile Remove="Migrations\20200222214618_poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200222222909_poczatkowa.cs" />
-    <Compile Remove="Migrations\20200222222909_poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200223204023_poczatkowa.cs" />
-    <Compile Remove="Migrations\20200223204023_poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200223205946_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200223205946_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200223212252_Testowa.cs" />
-    <Compile Remove="Migrations\20200223212252_Testowa.Designer.cs" />
-    <Compile Remove="Migrations\20200227175052_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200227175052_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200227175639_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200227175639_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200228125134_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200228125134_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200228130727_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200228130727_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200229121050_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200229121050_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200420195329_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200420195329_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200420195458_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200420195458_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200420195751_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200420195751_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200421093639_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200421093639_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200421094813_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200421094813_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200421192040_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200421192040_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200421195608_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200421195608_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200425183235_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200425183235_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200425184125_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200425184125_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200425184705_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200425184705_Poczatkowa.Designer.cs" />
-    <Compile Remove="Migrations\20200430183902_Poczatkowa.cs" />
-    <Compile Remove="Migrations\20200430183902_Poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201015193213_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201015193213_poczatkowa.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
   <ItemGroup>

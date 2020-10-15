@@ -36,7 +36,9 @@ namespace FemdAPI.Infrastructure
 
                 new User("Yennefer","Geralt","Unicorn@gmail.com","Master"),
 
-                new User("Ciranell","Ciria","Princess@gmail.com","Noobie")
+                new User("Ciranell","Ciria","Princess@gmail.com","Noobie"),
+
+                new User("Test","Test","Test@test.pl","Admin"),
 
             };                
             _femdAPIContext.AddRange(femdSampleData);
@@ -47,15 +49,57 @@ namespace FemdAPI.Infrastructure
         {
             var LectureSampleData = new List<Lecture>
             {
-                new Lecture("Hello",1,Level.Beginner)
+                new Lecture("Hello",1,"Na pierwszej lekcji zajmiemy się zagadnieniami dotyczących powitań w jezyku niemieckim")
                 {
-                    Verbs = new List<Verb>()
-                    {
-                        new Verb("kommen","gekommen","kommten"),
-                        new Verb("bekommen","bekommen","bekommten"),
-                        new Verb("machen","gemacht","machten"),
 
+                    WordsDictionary =  new WordsDictionary
+                    {
+                         Verbs = new List<Verb>()
+                            {
+                                new Verb("machen","machte","hat gemacht")
+                                {
+                                    Photo = new Photo("c/d/e/sciezkadoPlotki")
+                                },
+
+                                
+                            },
+                         Nouns = new List<Noun>()
+                            {
+                               new Noun
+                               {
+                                   Masculine = "der Mann",
+                                   Feminine = "die Frau",
+                                   GenderNeutral = "das Auto",
+                                   Photo = new Photo("c/d/e/sciezkadoVesemira")
+                               }
+                            }
                     }
+                },
+                 
+                new Lecture("Tschoss",2,"Na drugiej lekcji zajmiemy się zagadnieniami dotyczących pożegnań w jezyku niemieckim")
+                {
+
+                    WordsDictionary =  new WordsDictionary
+                    {
+                         Verbs = new List<Verb>()
+                         {
+                            new Verb("Kommen","Kann","ist gekommen")
+                            {
+                               Photo = new Photo("c/d/e/sciezkadoCiri")
+                            },
+                         },
+                        Nouns = new List<Noun>()
+                         {
+                           new Noun
+                           {
+                               Masculine = "der Tag",
+                               Feminine = "die Monat",
+                               GenderNeutral = "das Jahr",
+                               Photo = new Photo("c/d/e/sciezkadoJenfer")
+                           }
+                         }
+                    }
+                     
                 }
             };
             _femdAPIContext.AddRange(LectureSampleData);

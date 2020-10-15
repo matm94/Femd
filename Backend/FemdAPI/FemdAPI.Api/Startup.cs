@@ -44,7 +44,11 @@ namespace FemdAPI.Api
 
             services.AddAutoMapper(typeof(FemdProfile));
             services.AddAuthorization(x => x.AddPolicy("ADMIN", x => x.RequireRole("admin")));
-            
+
+            services.AddControllers().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
             //to do  -> DI and move to Options folder in Infrastructure all swagger configuration and jwt too
             services.AddSwaggerGen(cfg =>
             {

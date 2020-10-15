@@ -10,11 +10,13 @@ namespace FemdAPI.Core.Data
     {
         public DbSet<User> UserDbSet { get; set; }
         public DbSet<Lecture> LectureDbSet { get; set; }
+        public DbSet<WordsDictionary> WordsDictionaryDbSet { get; set; }
         public DbSet<Verb> VerbDbSet { get; set; }
         public DbSet<Noun> NounDbSet { get; set; }
+        public DbSet<Photo> PhotoDbSet { get; set; }
 
 
-        private readonly string _connectionString = @"Data Source=MATM94\SQLEXPRESS;Initial Catalog=FemdAPIContext;Integrated Security=True;Pooling=False";
+        private readonly string _connectionString = @"Data Source=MATM94\SQLEXPRESS;Initial Catalog=FEMD_API;Integrated Security=True;Pooling=False";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -26,20 +28,31 @@ namespace FemdAPI.Core.Data
             modelBuilder.ApplyConfigurationsFromAssembly((typeof(FemdApiContext).Assembly));
 
             modelBuilder.Entity<Lecture>()
-               .HasKey(k => k.Id);
-            modelBuilder.Entity<Lecture>()
-                .HasMany(v => v.Verbs)
-                .WithOne(l => l.Lecture)
-                .HasForeignKey(fk => fk.LectureId)
+               .HasOne(wd => wd.WordsDictionary)
+               .WithOne(lc => lc.Lecture)
+               .HasForeignKey<WordsDictionary>(fk => fk.LectureId);
+
+            modelBuilder.Entity<WordsDictionary>()
+                .HasMany(vr => vr.Verbs)
+                .WithOne(wd => wd.WordsDictionary)
+                .HasForeignKey(fk => fk.WordsDictonaryId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Lecture>()
-                .HasKey(k => k.Id);
-            modelBuilder.Entity<Lecture>()
-                .HasMany(v => v.Nouns)
-                .WithOne(l => l.Lecture)
-                .HasForeignKey(fk => fk.LectureId)
+            modelBuilder.Entity<WordsDictionary>()
+                .HasMany(non => non.Nouns)
+                .WithOne(wd => wd.WordsDictionary)
+                .HasForeignKey(fk => fk.WordsDictonaryId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Verb>()
+                .HasOne(ph => ph.Photo)
+                .WithOne(vr => vr.Verb)
+                .HasForeignKey<Photo>(fk => fk.VerbId);
+
+            modelBuilder.Entity<Noun>()
+                .HasOne(ph => ph.Photo)
+                .WithOne(non => non.Noun)
+                .HasForeignKey<Photo>(fk => fk.NounId);
 
         }
 

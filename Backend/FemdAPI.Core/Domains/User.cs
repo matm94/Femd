@@ -19,9 +19,9 @@ namespace FemdAPI.Core.Domains
 
         [Required]
         [MinLength(3, ErrorMessage = "Minimalna ilosc znakow 3")]
-        [MaxLength(30, ErrorMessage = "Maksymalna ilosc znakow 3")]
+        [MaxLength(15, ErrorMessage = "Maksymalna ilosc znakow 15")]
         public string Password { get; protected set; }
-        public string Role { get; protected set; } 
+        public string Role { get; protected set; }
 
         [EmailAddress(ErrorMessage ="Nieprawidłowy format")]
         public string Email { get; protected set; }
@@ -39,46 +39,6 @@ namespace FemdAPI.Core.Domains
             Update();
         }
 
-        //public void SetLogin(string login)
-        //{
-        //    if(string.IsNullOrWhiteSpace(login))
-        //    {
-        //        throw new Exception("Login nie moze byc pusty");
-        //    }
-        //    if(Login == login)
-        //    {
-        //        return;
-        //    }
-        //    Login = login;
-        //    Update();
-        //}
-        //public void SetPassword(string password)
-        //{
-        //    if(string.IsNullOrWhiteSpace(password))
-        //    {
-        //        throw new Exception("Haslo nie moze byc puste");
-        //    }
-        //    if(Password == password)
-        //    {
-        //        return;
-        //    }
-
-        //    Password = password;
-        //    Update();
-        //}
-        //public void SetEmail(string email)
-        //{
-        //    if(string.IsNullOrWhiteSpace(email))
-        //    {
-        //        throw new Exception("email nie moze byc pusty");
-        //    }
-        //    if(Email == email)
-        //    {
-        //        return;
-        //    }
-        //    Email = email;
-        //    Update();
-        //}
         public void Active()
         {
             if(IsActive)

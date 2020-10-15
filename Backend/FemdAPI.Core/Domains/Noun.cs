@@ -8,11 +8,13 @@ namespace FemdAPI.Core.Domains
     public class Noun
     {
         [Key]
-        public int Id { get; protected set; }
-        public string Feminine { get; protected set; }
-        public string Masculine { get; protected set; }
-        public string GenderNeutral { get; protected set; }
-        public Guid LectureId { get; set; }
-        public Lecture Lecture { get; set; }
+        public Guid Id { get; protected set; }
+        public string Feminine { get;  set; }
+        public string Masculine { get;  set; }
+        public string GenderNeutral { get;  set; }
+        public Guid WordsDictonaryId { get; protected set; }
+        public WordsDictionary WordsDictionary { get; protected set; }
+        public Photo Photo { get; set; }
+
     }
 }

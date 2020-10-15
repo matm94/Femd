@@ -8,15 +8,17 @@ namespace FemdAPI.Core.Domains
     public class Verb
     {
         [Key]
-        public int Id { get; protected set; }
+        public Guid Id { get; protected set; }
         [Required]
         public string Infinitive { get; protected set; }
         [Required]
         public string PastPrateritum { get; protected set; }
         [Required]
         public string PastPartizip { get; protected set; }
-        public Guid LectureId { get; protected set; }
-        public Lecture Lecture { get; protected set; }
+
+        public Guid WordsDictonaryId { get; protected set; }
+        public WordsDictionary WordsDictionary { get; protected set; }
+        public Photo Photo { get; set; }
 
         public Verb(string infinitive, string pastPrateritum, string pastPartizip)
         {

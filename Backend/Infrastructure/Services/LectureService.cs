@@ -19,31 +19,28 @@ namespace FemdAPI.Infrastructure.Services
             _lectureRepository = lectureRepository;
             _mapper = mapper;   
         }
-        public LectureDetailsDTO Get(string name)
-        {
-            var lecture = _lectureRepository.GetLectureOrNull(name);
-            var lectureDtos = _mapper.Map<LectureDetailsDTO>(lecture);
-            return lectureDtos;
-        }
-
-        public LectureDetailsDTO Get(Guid id)
+        public WordsDictionaryDTO Get(Guid id)
         {
             var lecture = _lectureRepository.GetLectureOrNull(id);
-            var lectureDtos = _mapper.Map<LectureDetailsDTO>(lecture);
-            return lectureDtos;
+            return _mapper.Map<WordsDictionaryDTO>(lecture);
+        }
+        public LectureDTO Get(string name)
+        {
+            var lecture = _lectureRepository.GetLectureOrNull(name);
+            return _mapper.Map<LectureDTO>(lecture);
         }
 
-        public IEnumerable<LectureDetailsDTO> GetAll()
+        public IEnumerable<LectureDTO> GetAll()
         {
             var letureAll = _lectureRepository.GetAll();
-            var lectureAllDtos = _mapper.Map<IEnumerable<LectureDetailsDTO>>(letureAll);
+            var lectureAllDtos = _mapper.Map<IEnumerable<LectureDTO>>(letureAll);
             return lectureAllDtos;
         }
 
-        public void Create(string name, int number, Level level)
+        public void Create(string name, int number, string description)
         { 
             var lecture = _lectureRepository.GetLectureOrFail(name);
-            lecture = new Lecture(name,number,level);
+            lecture = new Lecture(name,number,description);
             _lectureRepository.AddLecture(lecture);
         }
 
@@ -53,6 +50,7 @@ namespace FemdAPI.Infrastructure.Services
             var lecture = _lectureRepository.GetLectureOrNull(id);
             _lectureRepository.DeleteLecture(lecture.Id);
         }
+
 
     }
 }

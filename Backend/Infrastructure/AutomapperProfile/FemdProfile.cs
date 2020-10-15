@@ -3,6 +3,7 @@ using FemdAPI.Core.Domains;
 using FemdAPI.Infrastructure.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace FemdAPI.Infrastructure.AutomapperProfile
@@ -14,9 +15,7 @@ namespace FemdAPI.Infrastructure.AutomapperProfile
             CreateMap<User, UserDTO>();
             CreateMap<User, AccountDTO>();
             CreateMap<Lecture, LectureDTO>();
-            CreateMap<Lecture, LectureDetailsDTO>();
-            CreateMap<Verb, VerbDTO>();
-            CreateMap<Noun, NounDTO>();
+            CreateMap<Lecture, WordsDictionaryDTO>();
         }
 
     }

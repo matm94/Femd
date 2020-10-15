@@ -27,9 +27,15 @@ namespace FemdAPI.Api.Controllers
             var lecture = _lectureService.Get(name);
             return Ok(lecture);
         }
+        [HttpGet("name/{id}")]
+        public ActionResult<WordsDictionaryDTO> Get(Guid id)
+        {
+            var lecture = _lectureService.Get(id);
+            return Ok(lecture);
+        }
 
         [HttpGet]
-        public ActionResult<List<LectureDTO>> GetAll(string name)
+        public ActionResult<List<LectureDTO>> GetAll()
         {
             var lecture = _lectureService.GetAll();
             return Ok(lecture);
@@ -38,7 +44,8 @@ namespace FemdAPI.Api.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] CreateLecture command)
         {
-            _lectureService.Create(command.Name,command.Number,command.Level);
+            _lectureService.Create
+                (command.Name,command.Number,command.Description);
             return Created("api/[controller]/" + command.Name, null);
         }
 

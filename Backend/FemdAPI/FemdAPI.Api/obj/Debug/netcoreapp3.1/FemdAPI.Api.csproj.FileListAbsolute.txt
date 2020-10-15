@@ -138,6 +138,9 @@ D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\Microsof
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\FemdAPI.Api.csproj.CoreCompileInputs.cache
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\FemdAPI.Api.MvcApplicationPartsAssemblyInfo.cs
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\FemdAPI.Api.MvcApplicationPartsAssemblyInfo.cache

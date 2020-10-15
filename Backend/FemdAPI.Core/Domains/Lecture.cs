@@ -1,32 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace FemdAPI.Core.Domains
 {
-    public enum Level
-    {
-        Beginner,
-        Intrmediate,
-        Advenced
-    }
 
     public class Lecture
     {
-        public Guid Id { get; protected set; }
-        public string Name { get; protected set; }
-        public int Number { get; protected set; }
-        public Level Level { get; set; }
-        public List<Verb> Verbs { get; set; }
-        public List<Noun> Nouns { get; set; }
+        [Key]
+        public Guid Id { get;  set; }
+        [Required]
+        public string Name { get;  set; }
+        [Required]
+        public int Number { get;  set; }
+        [Required]
+        public string Description { get;  set; }
 
-        public Lecture(string name, int number, Level level)
+        public WordsDictionary WordsDictionary { get; set; }
+
+        public Lecture(string name, int number, string description)
         {
             Name = name;
             Number = number;
-            Level = new Level();
+            Description = description;
         }
-
-
     }
 }
