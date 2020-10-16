@@ -21,20 +21,27 @@ namespace FemdAPI.Api.Controllers
             _lectureService = lectureService;
         }
 
-        [HttpGet("{name}")]
+        [HttpGet("name/{name}")]
         public ActionResult<LectureDTO> Get(string name)
         {
             var lecture = _lectureService.Get(name);
             return Ok(lecture);
         }
-        [HttpGet("name/{id}")]
-        public ActionResult<WordsDictionaryDTO> Get(Guid id)
+        [HttpGet("CompleteLecture/{id}")]
+        public ActionResult<LectureDTO> GetCompleteLectureDTO(Guid id)
         {
-            var lecture = _lectureService.Get(id);
+            var lecture = _lectureService.GetFullLecture(id);
             return Ok(lecture);
         }
 
-        [HttpGet]
+        [HttpGet("OnlyDictionary/{id}")]
+        public ActionResult<List<WordsDictionaryDTO>> GetOnlyDictionary(Guid id)
+        {
+            var lecture = _lectureService.GetOnlyDictionary(id);
+            return Ok(lecture);
+        }
+
+        [HttpGet("All")]
         public ActionResult<List<LectureDTO>> GetAll()
         {
             var lecture = _lectureService.GetAll();

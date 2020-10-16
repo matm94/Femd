@@ -13,7 +13,6 @@ namespace FemdAPI.Core.Data
         public DbSet<WordsDictionary> WordsDictionaryDbSet { get; set; }
         public DbSet<Verb> VerbDbSet { get; set; }
         public DbSet<Noun> NounDbSet { get; set; }
-        public DbSet<Photo> PhotoDbSet { get; set; }
 
 
         private readonly string _connectionString = @"Data Source=MATM94\SQLEXPRESS;Initial Catalog=FEMD_API;Integrated Security=True;Pooling=False";
@@ -44,15 +43,6 @@ namespace FemdAPI.Core.Data
                 .HasForeignKey(fk => fk.WordsDictonaryId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Verb>()
-                .HasOne(ph => ph.Photo)
-                .WithOne(vr => vr.Verb)
-                .HasForeignKey<Photo>(fk => fk.VerbId);
-
-            modelBuilder.Entity<Noun>()
-                .HasOne(ph => ph.Photo)
-                .WithOne(non => non.Noun)
-                .HasForeignKey<Photo>(fk => fk.NounId);
 
         }
 

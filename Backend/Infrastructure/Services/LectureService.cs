@@ -19,15 +19,22 @@ namespace FemdAPI.Infrastructure.Services
             _lectureRepository = lectureRepository;
             _mapper = mapper;   
         }
-        public WordsDictionaryDTO Get(Guid id)
-        {
-            var lecture = _lectureRepository.GetLectureOrNull(id);
-            return _mapper.Map<WordsDictionaryDTO>(lecture);
-        }
+
         public LectureDTO Get(string name)
         {
             var lecture = _lectureRepository.GetLectureOrNull(name);
             return _mapper.Map<LectureDTO>(lecture);
+        }
+        public CompleteLectureDTO GetFullLecture(Guid id)
+        {
+            var lecture = _lectureRepository.GetLectureOrNull(id);
+            return _mapper.Map<CompleteLectureDTO>(lecture);
+        }
+
+        public WordsDictionaryDTO GetOnlyDictionary(Guid id)
+        {
+            var lecture = _lectureRepository.GetWordsDictionaryOrNull(id);
+            return _mapper.Map<WordsDictionaryDTO>(lecture);
         }
 
         public IEnumerable<LectureDTO> GetAll()

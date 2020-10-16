@@ -21,7 +21,7 @@ namespace FemdAPI.Infrastructure.Extensions
 
         public static Lecture GetLectureOrNull(this ILectureRepository _lectureRepository, Guid id)
         {
-            var lecture = _lectureRepository.Get(id);
+            var lecture = _lectureRepository.GetFullLecture(id);
             if (lecture == null)
             {
                 throw new Exception($"Wyklad o podanym id: {id} nie istnieje");
@@ -29,6 +29,18 @@ namespace FemdAPI.Infrastructure.Extensions
 
             return lecture;
         }
+
+        public static WordsDictionary GetWordsDictionaryOrNull(this ILectureRepository _lectureRepository, Guid id)
+        {
+            var lecture = _lectureRepository.GetOnlyDictionary(id);
+            if (lecture == null)
+            {
+                throw new Exception($"Słownik dla podanego wykladu o podanym id: {id} nie istnieje");
+            }
+
+            return lecture;
+        }
+
 
         public static Lecture GetLectureOrFail(this ILectureRepository _lectureRepository, string name)
         {

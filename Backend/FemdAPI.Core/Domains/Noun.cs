@@ -12,9 +12,10 @@ namespace FemdAPI.Core.Domains
         public string Feminine { get;  set; }
         public string Masculine { get;  set; }
         public string GenderNeutral { get;  set; }
+        [Required]
+        public string PhotoPath { get; set; }
         public Guid WordsDictonaryId { get; protected set; }
         public WordsDictionary WordsDictionary { get; protected set; }
-        public Photo Photo { get; set; }
 
     }
 }

@@ -58,8 +58,8 @@ namespace FemdAPI.Infrastructure
                             {
                                 new Verb("machen","machte","hat gemacht")
                                 {
-                                    Photo = new Photo("c/d/e/sciezkadoPlotki")
-                                },
+                                    PhotoPath = "C/sciezka"
+                                }
 
                                 
                             },
@@ -70,7 +70,7 @@ namespace FemdAPI.Infrastructure
                                    Masculine = "der Mann",
                                    Feminine = "die Frau",
                                    GenderNeutral = "das Auto",
-                                   Photo = new Photo("c/d/e/sciezkadoVesemira")
+                                   PhotoPath = "C/sciezka"
                                }
                             }
                     }
@@ -84,9 +84,9 @@ namespace FemdAPI.Infrastructure
                          Verbs = new List<Verb>()
                          {
                             new Verb("Kommen","Kann","ist gekommen")
-                            {
-                               Photo = new Photo("c/d/e/sciezkadoCiri")
-                            },
+                                {
+                                    PhotoPath = "C/sciezka"
+                                }
                          },
                         Nouns = new List<Noun>()
                          {
@@ -95,7 +95,7 @@ namespace FemdAPI.Infrastructure
                                Masculine = "der Tag",
                                Feminine = "die Monat",
                                GenderNeutral = "das Jahr",
-                               Photo = new Photo("c/d/e/sciezkadoJenfer")
+                               PhotoPath = "C/sciezka"
                            }
                          }
                     }

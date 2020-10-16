@@ -20,11 +20,13 @@ namespace FemdAPI.Infrastructure.Repositories
 
         public Lecture Get(string name)
             => _femdApiContext.LectureDbSet.SingleOrDefault(n => n.Name == name);
-        public Lecture Get(Guid id)
+        public Lecture GetFullLecture(Guid id)
             => _femdApiContext.LectureDbSet
                 .Include(wd => wd.WordsDictionary.Verbs)
-                .Include(wd => wd.WordsDictionary.Nouns)
                 .SingleOrDefault(n => n.Id == id);
+
+        public WordsDictionary GetOnlyDictionary(Guid id)
+            => _femdApiContext.WordsDictionaryDbSet.SingleOrDefault(x => x.LectureId == id);
 
         public IEnumerable<Lecture> GetAll()
             => _femdApiContext.LectureDbSet.ToList();

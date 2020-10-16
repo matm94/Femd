@@ -15,10 +15,11 @@ namespace FemdAPI.Core.Domains
         public string PastPrateritum { get; protected set; }
         [Required]
         public string PastPartizip { get; protected set; }
+        [Required]
+        public string PhotoPath { get; set; }
 
         public Guid WordsDictonaryId { get; protected set; }
         public WordsDictionary WordsDictionary { get; protected set; }
-        public Photo Photo { get; set; }
 
         public Verb(string infinitive, string pastPrateritum, string pastPartizip)
         {

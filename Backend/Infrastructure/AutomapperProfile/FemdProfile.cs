@@ -15,7 +15,8 @@ namespace FemdAPI.Infrastructure.AutomapperProfile
             CreateMap<User, UserDTO>();
             CreateMap<User, AccountDTO>();
             CreateMap<Lecture, LectureDTO>();
-            CreateMap<Lecture, WordsDictionaryDTO>();
+            CreateMap<Lecture, CompleteLectureDTO>();
+            CreateMap<WordsDictionary, WordsDictionaryDTO>();
         }
 
     }

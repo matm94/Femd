@@ -8,8 +8,9 @@ namespace FemdAPI.Infrastructure.Services
 {
     public interface ILectureService
     {
-        WordsDictionaryDTO Get(Guid id);
         LectureDTO Get(string name);
+        CompleteLectureDTO GetFullLecture(Guid id);
+        WordsDictionaryDTO GetOnlyDictionary(Guid id);
         IEnumerable<LectureDTO> GetAll();
         void Create(string name, int number, string description);
         void Delete(Guid id);
