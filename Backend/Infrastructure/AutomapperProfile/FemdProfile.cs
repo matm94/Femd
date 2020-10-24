@@ -15,8 +15,12 @@ namespace FemdAPI.Infrastructure.AutomapperProfile
             CreateMap<User, UserDTO>();
             CreateMap<User, AccountDTO>();
             CreateMap<Lecture, LectureDTO>();
-            CreateMap<Lecture, CompleteLectureDTO>();
+            CreateMap<Lecture, CompleteLectureDTO>()
+                .ForMember(d => d.Verbs, src => src.MapFrom(x => x.WordsDictionary.Verbs))
+                .ForMember(d => d.Nouns, src => src.MapFrom(x => x.WordsDictionary.Nouns));
             CreateMap<WordsDictionary, WordsDictionaryDTO>();
+            CreateMap<Verb, VerbDTO>();
+            CreateMap<Noun, NounDTO>();
         }
 
     }

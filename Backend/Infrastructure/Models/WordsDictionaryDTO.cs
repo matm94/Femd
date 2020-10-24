@@ -7,7 +7,7 @@ namespace FemdAPI.Infrastructure.Models
 {
     public class WordsDictionaryDTO
     {
-        public IEnumerable<Verb> Verbs { get; set; }
-        public IEnumerable<Noun> Nouns { get; set; }
+        public IEnumerable<VerbDTO> Verbs { get; set; }
+        public IEnumerable<NounDTO> Nouns { get; set; }
     }
 }

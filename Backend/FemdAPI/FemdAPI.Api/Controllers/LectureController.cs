@@ -28,7 +28,7 @@ namespace FemdAPI.Api.Controllers
             return Ok(lecture);
         }
         [HttpGet("CompleteLecture/{id}")]
-        public ActionResult<LectureDTO> GetCompleteLectureDTO(Guid id)
+        public ActionResult<CompleteLectureDTO> GetCompleteLectureDTO(Guid id)
         {
             var lecture = _lectureService.GetFullLecture(id);
             return Ok(lecture);

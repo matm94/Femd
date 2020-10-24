@@ -22,14 +22,19 @@ namespace FemdAPI.Infrastructure.Repositories
             => _femdApiContext.LectureDbSet.SingleOrDefault(n => n.Name == name);
         public Lecture GetFullLecture(Guid id)
             => _femdApiContext.LectureDbSet
-                .Include(wd => wd.WordsDictionary.Verbs)
+                .Include(x => x.WordsDictionary)
                 .SingleOrDefault(n => n.Id == id);
 
         public WordsDictionary GetOnlyDictionary(Guid id)
-            => _femdApiContext.WordsDictionaryDbSet.SingleOrDefault(x => x.LectureId == id);
+             => _femdApiContext.WordsDictionaryDbSet
+                .Include(x => x.Verbs)
+                .Include(y => y.Nouns)
+                .SingleOrDefault(x => x.LectureId == id);
+
 
         public IEnumerable<Lecture> GetAll()
             => _femdApiContext.LectureDbSet.ToList();
+
         public void AddLecture(Lecture lecture)
         {
             _femdApiContext.LectureDbSet.Add(lecture);
