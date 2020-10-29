@@ -11,21 +11,38 @@ namespace FemdAPI.Core.Domains
         public Guid Id { get; protected set; }
         [Required]
         public string Infinitive { get; protected set; }
+        public string ConjugationTense { get; protected set; }
         [Required]
-        public string PastPrateritum { get; protected set; }
+        public string ConjugationIch { get; protected set; }
         [Required]
-        public string PastPartizip { get; protected set; }
+        public string ConjugationDu { get; protected set; }
         [Required]
-        public string PhotoPath { get; set; }
+        public string ConjugationEr { get; protected set; }
+        [Required]
+        public string ConjugationWir { get; protected set; }
+        [Required]
+        public string ConjugationIhr { get; protected set; }
+        [Required]
+        public string Conjugation_sie { get; protected set; }
+        [Required]
+        public string ConjugationSie { get; protected set; }
 
         public Guid WordsDictonaryId { get; protected set; }
         public WordsDictionary WordsDictionary { get; protected set; }
 
-        public Verb(string infinitive, string pastPrateritum, string pastPartizip)
+        public Verb(string infinitive,string conjugationTense, string conjugationIch, string conjugationDu,
+            string conjugationEr, string conjugationWir, string conjugationIhr, string conjugation_sie, string conjugationSie)
         {
             Infinitive = infinitive;
-            PastPrateritum = pastPrateritum;
-            PastPartizip = pastPartizip;
+            ConjugationTense = conjugationTense;
+            ConjugationIch = conjugationIch;
+            ConjugationDu = conjugationDu;
+            ConjugationEr = conjugationEr;
+            ConjugationWir = conjugationWir;
+            ConjugationIhr = conjugationIhr;
+            Conjugation_sie = conjugation_sie;
+            ConjugationSie = conjugationSie;
+
         }
     }
 }

@@ -9,6 +9,8 @@
     <Compile Remove="Migrations\20201015193213_poczatkowa.Designer.cs" />
     <Compile Remove="Migrations\20201016162401_poczatkowa.cs" />
     <Compile Remove="Migrations\20201016162401_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201016163857_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201016163857_poczatkowa.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +29,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\FemdAPI.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 
