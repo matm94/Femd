@@ -5,17 +5,11 @@ using System.Text;
 
 namespace FemdAPI.Core.Domains
 {
-    public class Adjective
+    public class Adjective : PartsOfSpeechBase
     {
-        [Key]
-        public Guid Id { get; set; }
-        [Required]
-        public string Content { get; set; }
-        [Required]
-        public string Category { get; set; }
-        [Required]
-        public string PhotoPath { get; set; }
-        public Guid WordsDictonaryId { get; protected set; }
-        public WordsDictionary WordsDictionary { get; protected set; }
+        public Adjective(string translation, string content, string photoPath): base(translation, content,photoPath)
+        {
+        }
+
     }
 }

@@ -11,6 +11,38 @@
     <Compile Remove="Migrations\20201016162401_poczatkowa.Designer.cs" />
     <Compile Remove="Migrations\20201016163857_poczatkowa.cs" />
     <Compile Remove="Migrations\20201016163857_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201030190409_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201030190409_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201031131357_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201031131357_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201031133405_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201031133405_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201031134639_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201031134639_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201031140335_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201031140335_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201031151151_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201031151151_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201031152033_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201031152033_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201031152412_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201031152412_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201031153429_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201031153429_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201031154300_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201031154300_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201031161548_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201031161548_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201102082511_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201102082511_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201102101029_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201102101029_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201102101539_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201102101539_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201102102113_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201102102113_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201102102532_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201102102532_poczatkowa.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,10 +61,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\FemdAPI.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 

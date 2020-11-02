@@ -5,9 +5,9 @@ using System.Text;
 
 namespace FemdAPI.Core.Domains
 {
-    public class Sentence : PartsOfSpeechBase
+    public class Adverb : PartsOfSpeechBase
     {
-        public Sentence(string translation, string content, string photoPath) : base(translation, content, photoPath)
+        public Adverb(string translation, string content, string photoPath) : base(translation, content, photoPath)
         {
         }
     }

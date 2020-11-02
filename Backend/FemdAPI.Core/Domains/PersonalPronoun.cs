@@ -10,6 +10,8 @@ namespace FemdAPI.Core.Domains
         [Key]
         public Guid Id { get; set; }
         [Required]
+        public string Translation { get; set; }
+        [Required]
         public string FirstPerson { get; set; }
         [Required]
         public string SecondPerson { get; set; }
@@ -28,9 +30,10 @@ namespace FemdAPI.Core.Domains
         public Guid WordsDictonaryId { get; protected set; }
         public WordsDictionary WordsDictionary { get; protected set; }
 
-        public PersonalPronoun(string firstPerson, string secondPerson, string thirdPerson,
+        public PersonalPronoun(string translation, string firstPerson, string secondPerson, string thirdPerson,
             string firstPersonPlural, string secondPersonPlural, string thirdPersonPlural, string formal, string photoPath)
         {
+            Translation = translation;
             FirstPerson = firstPerson;
             SecondPerson = secondPerson;
             ThirdPerson = thirdPerson;

@@ -10,6 +10,8 @@ namespace FemdAPI.Core.Domains
         [Key]
         public Guid Id { get; protected set; }
         [Required]
+        public string Translation { get; set; }
+        [Required]
         public string Infinitive { get; protected set; }
         public string ConjugationTense { get; protected set; }
         [Required]
@@ -26,13 +28,17 @@ namespace FemdAPI.Core.Domains
         public string Conjugation_sie { get; protected set; }
         [Required]
         public string ConjugationSie { get; protected set; }
+        [Required]
+        public string PhotoPath { get; set; }
+        public string Description { get; set; }
 
         public Guid WordsDictonaryId { get; protected set; }
         public WordsDictionary WordsDictionary { get; protected set; }
 
-        public Verb(string infinitive,string conjugationTense, string conjugationIch, string conjugationDu,
+        public Verb(string translation, string infinitive,string conjugationTense, string conjugationIch, string conjugationDu,
             string conjugationEr, string conjugationWir, string conjugationIhr, string conjugation_sie, string conjugationSie)
         {
+            Translation = translation;
             Infinitive = infinitive;
             ConjugationTense = conjugationTense;
             ConjugationIch = conjugationIch;
@@ -42,7 +48,6 @@ namespace FemdAPI.Core.Domains
             ConjugationIhr = conjugationIhr;
             Conjugation_sie = conjugation_sie;
             ConjugationSie = conjugationSie;
-
         }
     }
 }

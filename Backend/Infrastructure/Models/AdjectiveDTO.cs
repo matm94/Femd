@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FemdAPI.Infrastructure.Models
 {
-    public class NounDTO
+    public class AdjectiveDTO
     {
         public string Translation { get; set; }
         public string Content { get; set; }

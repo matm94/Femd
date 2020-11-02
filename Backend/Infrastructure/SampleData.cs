@@ -14,7 +14,6 @@ namespace FemdAPI.Infrastructure
         {
             _femdAPIContext = femdAPIContext;
         }
-
         public void GetSampleData()
         {
             if(_femdAPIContext.Database.CanConnect())
@@ -23,11 +22,9 @@ namespace FemdAPI.Infrastructure
                 {
                     InsertData();
                     InsertDataLecture();
-                }
-                
+                }              
             }
         }
-
         private void InsertData()
         {
             var femdSampleData = new List<User>
@@ -51,56 +48,60 @@ namespace FemdAPI.Infrastructure
             {
                 new Lecture("Hello",1,"Na pierwszej lekcji zajmiemy się zagadnieniami dotyczących powitań w jezyku niemieckim")
                 {
-
                     WordsDictionary =  new WordsDictionary
                     {
-                         Verbs = new List<Verb>()
-                            {
-                                new Verb("machen","machte","hat gemacht")
-                                {
-                                    PhotoPath = "C/sciezka"
-                                }
-
-                                
-                            },
+                         Adjectives = new List<Adjective>()
+                         {
+                             new Adjective("dobry","gut","C/gut")
+                         },
+                         Adverbs = new List<Adverb>()
+                         {
+                             new Adverb("późno","spater","c/spater")
+                         },
                          Nouns = new List<Noun>()
-                            {
-                               new Noun
-                               {
-                                   Masculine = "der Mann",
-                                   Feminine = "die Frau",
-                                   GenderNeutral = "das Auto",
-                                   PhotoPath = "C/sciezka"
-                               }
-                            }
+                         {
+                             new Noun("Rano","der Morgen", "C/morgen"),
+                             new Noun("Dzien","der Tag", "C/tag"),
+                             new Noun("Wieczór","der Abend" , "c/Tag"),
+                             new Noun("Noc","die Nacht", "c/Nacht")
+                         },
+                         PersonalPronouns = new List<PersonalPronoun>()
+                         {
+                             new PersonalPronoun("Nominativ - mianownik","ich","du","er","Wir","Ihr","sie","Sie","c/mianownik"),
+                             new PersonalPronoun("Genitive - dopełniacz","meiner","deiner","seiner","unserer","eurer","ihrer","Ihrer","c/genitive")
+                         },
+                         Sentences = new List<Sentence>()
+                         {
+                             new Sentence("Cześć","Hallo","c/hallo"),
+                             new Sentence("Dzień dobry-rano","Guten Morgen","c/Guten Morgen"),
+                             new Sentence("Dzień dobry-po południu","Guten Tag","c/guten tag"),
+                             new Sentence("Dobry wieczór","Guten Abend","c/guten abend"),
+                             new Sentence("Cześć","Servus","c/servus"),
+                             new Sentence("Witam","Willkommen","c/willkommen"),
+                             new Sentence("Do widzenia","Auf Wiedersehen","C/auf wiedersehen"),
+                             new Sentence("Dobranoc","Gute Nacht","c/Gute nacht"),
+                             new Sentence("Cześć","Tschüs","c/Tschüs"),
+                             new Sentence("Na razie","Bis später","c/Bis später"),
+                             new Sentence("Do zobaczenia","Wir sehen uns","c/Wirsehenuns"),
+                             new Sentence("Do następnego razu","Bis zum nächsten Mal","c/biszumnachste"),
+                             new Sentence("Co tam","Wie geht's?","C/wiegehts"),
+                             new Sentence("Co tam u Ciebie","Wie gehts es dir","c/wiegehtsesdir"),
+                             new Sentence("Jak się ma Pan/Pani/Państwo","Wie geht es Ihnen?","C/wiegehtsesIhnen")
+                         },
+                         Verbs = new List<Verb>()
+                         {
+                             new Verb("iść","gehen","gehen","gehe","gehst","geht","gehen","geht","gehen","gehen")
+                             {
+                                 PhotoPath = "C/sciezka",
+                                 Description = "Gehen wyraza nie tylko ruch 'isc ,chodzic' ale rowniez 'powiesc sie, udac'"
+                             },
+                             new Verb("Widzieć","sehen","sehen","sehe","siehst","sieht","sehen","seht","sehen","sehen")
+                             {
+                                 PhotoPath = "c/sehen"
+                             }
+                         },
                     }
                 },
-                 
-                new Lecture("Tschoss",2,"Na drugiej lekcji zajmiemy się zagadnieniami dotyczących pożegnań w jezyku niemieckim")
-                {
-
-                    WordsDictionary =  new WordsDictionary
-                    {
-                         Verbs = new List<Verb>()
-                         {
-                            new Verb("Kommen","Kann","ist gekommen")
-                                {
-                                    PhotoPath = "C/sciezka"
-                                }
-                         },
-                        Nouns = new List<Noun>()
-                         {
-                           new Noun
-                           {
-                               Masculine = "der Tag",
-                               Feminine = "die Monat",
-                               GenderNeutral = "das Jahr",
-                               PhotoPath = "C/sciezka"
-                           }
-                         }
-                    }
-                     
-                }
             };
             _femdAPIContext.AddRange(LectureSampleData);
             _femdAPIContext.SaveChanges();

@@ -5,17 +5,11 @@ using System.Text;
 
 namespace FemdAPI.Core.Domains
 {
-    public class Noun
+    public class Noun : PartsOfSpeechBase
     {
-        [Key]
-        public Guid Id { get; protected set; }
-        public string Feminine { get;  set; }
-        public string Masculine { get;  set; }
-        public string GenderNeutral { get;  set; }
-        [Required]
-        public string PhotoPath { get; set; }
-        public Guid WordsDictonaryId { get; protected set; }
-        public WordsDictionary WordsDictionary { get; protected set; }
+        public Noun(string translation, string content, string photoPath) : base(translation, content, photoPath)
+        {
+        }
 
     }
 }

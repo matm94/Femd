@@ -12,15 +12,23 @@ namespace FemdAPI.Infrastructure.AutomapperProfile
     {
         public FemdProfile()
         {
-            CreateMap<User, UserDTO>();
-            CreateMap<User, AccountDTO>();
+            CreateMap<Adjective, AdjectiveDTO>();
+            CreateMap<Adverb, AdverbDTO>();
             CreateMap<Lecture, LectureDTO>();
             CreateMap<Lecture, CompleteLectureDTO>()
-                .ForMember(d => d.Verbs, src => src.MapFrom(x => x.WordsDictionary.Verbs))
-                .ForMember(d => d.Nouns, src => src.MapFrom(x => x.WordsDictionary.Nouns));
-            CreateMap<WordsDictionary, WordsDictionaryDTO>();
-            CreateMap<Verb, VerbDTO>();
+                .ForMember(d => d.Adjectives, src => src.MapFrom(x => x.WordsDictionary.Adjectives))
+                .ForMember(d => d.Adverbs, src => src.MapFrom(x => x.WordsDictionary.Adverbs))
+                .ForMember(d => d.PersonalPronuns, src => src.MapFrom(x => x.WordsDictionary.PersonalPronouns))
+                .ForMember(d => d.Nouns, src => src.MapFrom(x => x.WordsDictionary.Nouns))
+                .ForMember(d => d.Sentences, src => src.MapFrom(x => x.WordsDictionary.Sentences))
+                .ForMember(d => d.Verbs, src => src.MapFrom(x => x.WordsDictionary.Verbs));
             CreateMap<Noun, NounDTO>();
+            CreateMap<PersonalPronoun, PersonalPronunDTO>();
+            CreateMap<Sentence, SentenceDTO>();
+            CreateMap<User, AccountDTO>();
+            CreateMap<User, UserDTO>();
+            CreateMap<Verb, VerbDTO>();
+            CreateMap<WordsDictionary, WordsDictionaryDTO>();
         }
 
     }
