@@ -34,6 +34,8 @@ import { PictureModuleComponent } from './lecture/picture-module/picture-module.
 import { WordsModuleComponent } from './lecture/words-module/words-module.component';
 import { DictionaryModuleComponent } from './lecture/dictionary-module/dictionary-module.component';
 import { TextfieldComponent } from './lecture/textfield/textfield.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -72,7 +74,8 @@ import { TextfieldComponent } from './lecture/textfield/textfield.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     UserService,
