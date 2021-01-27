@@ -1,6 +1,5 @@
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\FemdAPI.Api.exe
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\FemdAPI.Api.csprojAssemblyReference.cache
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\staticwebassets\FemdAPI.Api.StaticWebAssets.Manifest.cache
@@ -144,3 +143,4 @@ D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\Newtonso
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\FemdAPI.Api.csproj.CoreCompileInputs.cache
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\FemdAPI.Api.MvcApplicationPartsAssemblyInfo.cs
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\FemdAPI.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\scopedcss\bundle\FemdAPI.Api.styles.css

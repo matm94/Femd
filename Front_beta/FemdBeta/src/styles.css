@@ -168,4 +168,67 @@ a.tileLink
   text-decoration: none;
 }
 
+.container-setup
+{
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
 
+.AjectivesStyle
+{
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: larger;
+
+
+}
+.PictureStyle
+{
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: larger;
+  max-width: 250px;
+  max-height: 250px;
+}
+.PictureStyle:hover
+{
+  -webkit-filter:blur( 1px);
+}
+.card-img-top
+{
+  margin: auto;
+  size: 250px;
+  height: 250px;
+  width: 310px;
+}
+
+.card
+{
+  min-width: 320px;
+  min-height: 160px;
+
+}
+
+.btn-margin
+{
+  margin-top: 10px;
+}
+.btn-nextPage
+{
+  margin-top: 50px;
+  margin-left: auto;
+  margin-left: auto;
+
+
+}
+.emptyButtonStyle
+{
+  background: none;
+  border: hidden;
+
+}

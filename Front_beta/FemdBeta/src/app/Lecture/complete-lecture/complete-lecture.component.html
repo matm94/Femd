@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <h1 style="margin-left: 50px;"> Lekcja:
+    <span class="badge bg-secondary" style="margin-left: 00px;">
+    <p *ngFor="let item of lecture">
+      {{item.LectureName}}
+    </p>
+  </span>
+  <span class="badge bg-secondary" style="margin-left: 100px;">
+    <p *ngFor="let item of lecture">
+      {{item.Desription}}
+    </p>
+  </span>
+</h1>
+  <div class="container-setup">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card text-info bg-dark mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Tekst</h5>
+            <p class="card-text">Moduł ćwiczący czytanie ze zrozumieniem</p>
+            <button class="btn btn-info" (click)="goText()">Start</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card text-info bg-dark mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Słówka</h5>
+            <p class="card-text">Moduł ćwiczący pisownie</p>
+            <button class="btn btn-info" (click)="goAdjective()">Start</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card text-info bg-dark mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Obrazy</h5>
+            <p class="card-text">Moduł ćwiczący skojarzenia obrazów z słowami</p>
+            <button class="btn btn-info" (click)="goPictures()">Start</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card text-info bg-dark mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Słownik</h5>
+            <p class="card-text">Zawiera wszystkie słówka z lekcji </p>
+            <button class="btn btn-info" (click)="goDictionary()">Start</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

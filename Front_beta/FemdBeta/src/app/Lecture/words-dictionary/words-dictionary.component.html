@@ -1,0 +1,14 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="card text-info bg-dark mb-3">
+  <div class="card-body">
+    <h5 class="card-title">Lista słówek </h5>
+    <div *ngFor="let list of worter"></div>
+    <p class="card-text">
+      <li>
+          {{worter}}
+      </li>
+    </p>
+    <button class="btn btn-info" (click)="goNewLesson()">Koniec</button>
+  </div>
+</div>

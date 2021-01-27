@@ -36,6 +36,41 @@ namespace FemdAPI.Infrastructure.Services
             var lecture = _lectureRepository.GetWordsDictionaryOrNull(id);
             return _mapper.Map<WordsDictionaryDTO>(lecture);
         }
+        public AdjectiveDTO GetAdjectie(Guid id)
+        {
+            var adjective = _lectureRepository.GetAdjectiveOrNull(id);
+            return _mapper.Map<AdjectiveDTO>(adjective);
+        }
+
+        public AdverbDTO GetAdverb(Guid id)
+        {
+            var adverb = _lectureRepository.GetAdverbOrNull(id);
+            return _mapper.Map<AdverbDTO>(adverb);
+        }
+
+        public NounDTO GetNoun(Guid id)
+        {
+            var noun = _lectureRepository.GetNounOrNull(id);
+            return _mapper.Map<NounDTO>(noun);
+        }
+
+        public PersonalPronounDTO GetPersonalPronoun(Guid id)
+        {
+            var personalPronoun = _lectureRepository.GetPersonalPronounOrNull(id);
+            return _mapper.Map<PersonalPronounDTO>(personalPronoun);
+        }
+
+        public SentenceDTO GetSentence(Guid id)
+        {
+            var sentence = _lectureRepository.GetSentenceOrNull(id);
+            return _mapper.Map<SentenceDTO>(sentence);
+        }
+
+        public VerbDTO GetVerb(Guid id)
+        {
+            var verb = _lectureRepository.GetVerbeOrNull(id);
+            return _mapper.Map<VerbDTO>(verb);
+        }
 
         public IEnumerable<LectureDTO> GetAll()
         {
@@ -57,7 +92,6 @@ namespace FemdAPI.Infrastructure.Services
             var lecture = _lectureRepository.GetLectureOrNull(id);
             _lectureRepository.DeleteLecture(lecture.Id);
         }
-
 
     }
 }

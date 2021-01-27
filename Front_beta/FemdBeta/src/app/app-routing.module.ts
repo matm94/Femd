@@ -13,6 +13,11 @@ import { RegistrationComponent } from './User/registration/registration.componen
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
+import { AdjectiveComponent } from './Lecture/adjective/adjective.component';
+import { PictureModuleComponent } from './lecture/picture-module/picture-module.component';
+import { WordsDictionaryComponent } from './Lecture/words-dictionary/words-dictionary.component';
+import { TextfieldComponent } from './lecture/textfield/textfield.component';
+import { CompleteLectureComponent } from './Lecture/complete-lecture/complete-lecture.component';
 
 
 const routes: Routes = [
@@ -56,6 +61,21 @@ const routes: Routes = [
   },
   {
     path: 'userProfile', component: UserProfileComponent, canActivate: [AuthGuard],
+  },
+  {
+    path: 'adjective', component: AdjectiveComponent, canActivate: [AuthGuard],
+  },
+  {
+    path: 'textfield', component: TextfieldComponent, canActivate: [AuthGuard],
+  },
+  {
+    path: 'picture-module', component: PictureModuleComponent, canActivate: [AuthGuard],
+  },
+  {
+    path: 'words-dictionary', component: WordsDictionaryComponent, canActivate: [AuthGuard],
+  },
+  {
+    path: 'complete-lecture', component: CompleteLectureComponent, canActivate: [AuthGuard],
   },
 ];
 

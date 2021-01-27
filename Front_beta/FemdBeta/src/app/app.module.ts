@@ -1,3 +1,4 @@
+import { LectureService } from './Shared/lecture.service';
 import { NavBarService } from './Shared/nav-bar.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { UserService } from './Shared/user.service';
@@ -21,6 +22,18 @@ import { TopTenComponent } from './home/top-ten/top-ten.component';
 import { UserProfileComponent } from './home/user-profile/user-profile.component';
 import { ProfileSettingsComponent } from './home/profile-settings/profile-settings.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { CompleteLectureComponent } from './Lecture/complete-lecture/complete-lecture.component';
+import { WordsDictionaryComponent } from './Lecture/words-dictionary/words-dictionary.component';
+import { AdjectiveComponent } from './Lecture/adjective/adjective.component';
+import { AdverbComponent } from './Lecture/adverb/adverb.component';
+import { NounComponent } from './Lecture/noun/noun.component';
+import { PersonalPronounComponent } from './Lecture/personal-pronoun/personal-pronoun.component';
+import { SentenceComponent } from './Lecture/sentence/sentence.component';
+import { VerbComponent } from './Lecture/verb/verb.component';
+import { PictureModuleComponent } from './lecture/picture-module/picture-module.component';
+import { WordsModuleComponent } from './lecture/words-module/words-module.component';
+import { DictionaryModuleComponent } from './lecture/dictionary-module/dictionary-module.component';
+import { TextfieldComponent } from './lecture/textfield/textfield.component';
 
 
 
@@ -40,7 +53,19 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     TopTenComponent,
     UserProfileComponent,
     ProfileSettingsComponent,
-    NavBarComponent
+    NavBarComponent,
+    CompleteLectureComponent,
+    WordsDictionaryComponent,
+    AdjectiveComponent,
+    AdverbComponent,
+    NounComponent,
+    PersonalPronounComponent,
+    SentenceComponent,
+    VerbComponent,
+    PictureModuleComponent,
+    WordsModuleComponent,
+    DictionaryModuleComponent,
+    TextfieldComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +76,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   ],
   providers: [
     UserService,
+    LectureService,
     NavBarService,
     {
       provide : HTTP_INTERCEPTORS,

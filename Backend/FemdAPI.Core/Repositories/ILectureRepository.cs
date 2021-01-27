@@ -10,6 +10,12 @@ namespace FemdAPI.Core.Repositories
         Lecture Get(string name);
         Lecture GetFullLecture(Guid id);
         WordsDictionary GetOnlyDictionary(Guid id);
+        Adjective GetAdjectie(Guid id);
+        Adverb GetAdverb(Guid id);
+        Noun GetNoun(Guid id);
+        PersonalPronoun GetPersonalPronoun(Guid id);
+        Sentence GetSentence(Guid id);
+        Verb GetVerb(Guid id);
         IEnumerable<Lecture> GetAll();
         void AddLecture(Lecture lecture);
         void UpdateLecture(Lecture lecture);

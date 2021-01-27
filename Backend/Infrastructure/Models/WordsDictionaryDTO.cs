@@ -10,7 +10,7 @@ namespace FemdAPI.Infrastructure.Models
         public IEnumerable<AdjectiveDTO> Adjectives { get; set; }
         public IEnumerable<AdverbDTO> Adverbs { get; set; }
         public IEnumerable<NounDTO> Nouns { get; set; }
-        public IEnumerable<PersonalPronunDTO> PersonalPronouns { get; set; }
+        public IEnumerable<PersonalPronounDTO> PersonalPronouns { get; set; }
         public IEnumerable<SentenceDTO> Sentences { get; set; }
         public IEnumerable<VerbDTO> Verbs { get; set; }
     }

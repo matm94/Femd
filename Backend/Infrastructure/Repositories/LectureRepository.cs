@@ -40,7 +40,24 @@ namespace FemdAPI.Infrastructure.Repositories
                 .Include(x => x.Sentences)
                 .Include(x => x.Verbs)
                 .SingleOrDefault(x => x.LectureId == id);
+        public Adjective GetAdjectie(Guid id)
+            => _femdApiContext.AdjectiveDbSet.FirstOrDefault(x => x.Id == id);
 
+        public Adverb GetAdverb(Guid id)
+            => _femdApiContext.AdverbDbSet.FirstOrDefault(x => x.Id == id);
+
+        public Noun GetNoun(Guid id)
+            => _femdApiContext.NounDbSet.FirstOrDefault(x => x.Id == id);
+
+
+        public PersonalPronoun GetPersonalPronoun(Guid id)
+            => _femdApiContext.PersonalPronounDbSet.FirstOrDefault(x => x.Id == id);
+
+        public Sentence GetSentence(Guid id)
+            => _femdApiContext.SentenceDbSet.FirstOrDefault(x => x.Id == id);
+
+        public Verb GetVerb(Guid id)
+            => _femdApiContext.VerbDbSet.FirstOrDefault(x => x.Id == id);
 
         public IEnumerable<Lecture> GetAll()
             => _femdApiContext.LectureDbSet.ToList();
@@ -62,6 +79,6 @@ namespace FemdAPI.Infrastructure.Repositories
             _femdApiContext.SaveChanges();
         }
 
-
+        
     }
 }

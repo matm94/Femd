@@ -41,6 +41,48 @@ namespace FemdAPI.Api.Controllers
             return Ok(lecture);
         }
 
+        [HttpGet("Adjective/{id}")]
+        public ActionResult<AdjectiveDTO> GetAdjective(Guid id)
+        {
+            var adjective = _lectureService.GetAdjectie(id);
+            return Ok(adjective);
+        }
+
+        [HttpGet("Adverb/{id}")]
+        public ActionResult<AdverbDTO> GetAdverb(Guid id)
+        {
+            var adverb = _lectureService.GetAdverb(id);
+            return Ok(adverb);
+        }
+
+        [HttpGet("Noun/{id}")]
+        public ActionResult<NounDTO> GetNoun(Guid id)
+        {
+            var noun = _lectureService.GetNoun(id);
+            return Ok(noun);
+        }
+
+        [HttpGet("PersonalPronoun/{id}")]
+        public ActionResult<PersonalPronounDTO> GetPersonalPronoun(Guid id)
+        {
+            var personalPronoun = _lectureService.GetPersonalPronoun(id);
+            return Ok(personalPronoun);
+        }
+
+        [HttpGet("Sentence/{id}")]
+        public ActionResult<SentenceDTO> GetSentence(Guid id)
+        {
+            var sentence = _lectureService.GetSentence(id);
+            return Ok(sentence);
+        }
+
+        [HttpGet("Verb/{id}")]
+        public ActionResult<VerbDTO> GetVerb(Guid id)
+        {
+            var verb = _lectureService.GetVerb(id);
+            return Ok(verb);
+        }
+
         [HttpGet("All")]
         public ActionResult<List<LectureDTO>> GetAll()
         {

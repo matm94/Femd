@@ -43,6 +43,10 @@
     <Compile Remove="Migrations\20201102102113_poczatkowa.Designer.cs" />
     <Compile Remove="Migrations\20201102102532_poczatkowa.cs" />
     <Compile Remove="Migrations\20201102102532_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201102102817_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201102102817_poczatkowa.Designer.cs" />
+    <Compile Remove="Migrations\20201205192252_poczatkowa.cs" />
+    <Compile Remove="Migrations\20201205192252_poczatkowa.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

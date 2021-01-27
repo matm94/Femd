@@ -1,0 +1,34 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+  <div class="row">
+    <div class="AjectivesStyle">
+      <div class="col-sm-12 col-md-4 ">
+        <div class="card text-info bg-dark mb-3">
+          <label name="Translation" style= "text-align: center;"> Drogi </label>
+          <input [(ngModel)]="newContent">
+          <button class="btn btn-info btn-margin" (click)="onSubmit()"> Zapisz</button>
+          <button class="btn btn-info btn-margin" (click)="Valid()"> Sprawdź </button>
+          <div class="invalid-feedback">
+
+            <div style="color: red;">
+                {{CheckWord()}}
+                Walidator dziala
+            </div>
+
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-info btn-nextPage" (click)="goPictures()" > Dalej </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+

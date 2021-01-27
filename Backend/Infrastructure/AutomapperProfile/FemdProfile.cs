@@ -23,12 +23,13 @@ namespace FemdAPI.Infrastructure.AutomapperProfile
                 .ForMember(d => d.Sentences, src => src.MapFrom(x => x.WordsDictionary.Sentences))
                 .ForMember(d => d.Verbs, src => src.MapFrom(x => x.WordsDictionary.Verbs));
             CreateMap<Noun, NounDTO>();
-            CreateMap<PersonalPronoun, PersonalPronunDTO>();
+            CreateMap<PersonalPronoun, PersonalPronounDTO>();
             CreateMap<Sentence, SentenceDTO>();
             CreateMap<User, AccountDTO>();
             CreateMap<User, UserDTO>();
             CreateMap<Verb, VerbDTO>();
             CreateMap<WordsDictionary, WordsDictionaryDTO>();
+
         }
 
     }
