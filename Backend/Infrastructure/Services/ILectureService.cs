@@ -11,7 +11,7 @@ namespace FemdAPI.Infrastructure.Services
         LectureDTO Get(string name);
         CompleteLectureDTO GetFullLecture(Guid id);
         WordsDictionaryDTO GetOnlyDictionary(Guid id);
-        AdjectiveDTO GetAdjectie(Guid id);
+        AdjectiveDTO GetAdjective(Guid id);
         AdverbDTO GetAdverb(Guid id);
         NounDTO GetNoun(Guid id);
         PersonalPronounDTO GetPersonalPronoun(Guid id);

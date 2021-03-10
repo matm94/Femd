@@ -10,7 +10,7 @@ namespace FemdAPI.Core.Domains
         [Key]
         public Guid Id { get; protected set; }
         [Required]
-        public string Translation { get; set; }
+        public string Translation { get; protected set; }
         [Required]
         public string Infinitive { get; protected set; }
         public string ConjugationTense { get; protected set; }
@@ -48,6 +48,7 @@ namespace FemdAPI.Core.Domains
             ConjugationIhr = conjugationIhr;
             Conjugation_sie = conjugation_sie;
             ConjugationSie = conjugationSie;
+            Id = Guid.NewGuid();
         }
     }
 }

@@ -1,8 +1,12 @@
-import { CompleteLecture } from '../Models/CompleteLecture';
+import { PersonalPronoun } from 'src/app/Models/PersonalPronoun';
+import { CompleteLecture } from './../Models/CompleteLecture';
+import { PartsOfSpeech } from 'src/app/Models/PartsOfSpeech';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Lecture } from '../Models/Lecture';
+import { Verb } from '../Models/Verb';
 
 @Injectable({
   providedIn: 'root'
@@ -20,43 +24,43 @@ export class LectureService {
   private SentenceURL = 'https://localhost:44366/api/Lecture/Sentence/11640f5e-399f-4338-ef04-08d89c755f94';
   private VerbURL = 'https://localhost:44366/api/Lecture/Verb/b5d61659-0a6b-4448-1683-08d89c755fa0';
 
-  getLecture(): Observable<any>
+  getLecture(): Observable<Lecture>
   {
-    return this.http.get<any>(this.LectureURL);
+    return this.http.get<Lecture>(this.LectureURL);
   }
   // tslint:disable-next-line: typedef
-  getCompleteLecture(): Observable<any>
+  getCompleteLecture(): Observable<CompleteLecture>
   {
-    return this.http.get<any>(this.CompleteLectureURL);
+    return this.http.get<CompleteLecture>(this.CompleteLectureURL);
   }
 
-  getAdjective(): Observable<any>
+  getAdjective(): Observable<PartsOfSpeech>
   {
-    return this.http.get<any>(this.AdjectiveURL);
+    return this.http.get<PartsOfSpeech>(this.AdjectiveURL);
   }
 
-  getAdverb(): Observable<any>
+  getAdverb(): Observable<PartsOfSpeech>
   {
-    return this.http.get<any>(this.AdverbURL);
+    return this.http.get<PartsOfSpeech>(this.AdverbURL);
   }
 
-  getNoun(): Observable<any>
+  getNoun(): Observable<PartsOfSpeech>
   {
-    return this.http.get<any>(this.NounURL);
+    return this.http.get<PartsOfSpeech>(this.NounURL);
   }
 
-  getPerspnalPronoun(): Observable<any>
+  getPerspnalPronoun(): Observable<PersonalPronoun>
   {
-    return this.http.get<any>(this.PersonalPronounURL);
+    return this.http.get<PersonalPronoun>(this.PersonalPronounURL);
   }
 
-  getSentence(): Observable<any>
+  getSentence(): Observable<PartsOfSpeech>
   {
-    return this.http.get<any>(this.SentenceURL);
+    return this.http.get<PartsOfSpeech>(this.SentenceURL);
   }
 
-  getVerb(): Observable<any>
+  getVerb(): Observable<Verb>
   {
-    return this.http.get<any>(this.VerbURL);
+    return this.http.get<Verb>(this.VerbURL);
   }
 }

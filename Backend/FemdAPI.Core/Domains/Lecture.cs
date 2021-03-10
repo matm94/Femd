@@ -9,13 +9,13 @@ namespace FemdAPI.Core.Domains
     public class Lecture
     {
         [Key]
-        public Guid Id { get;  set; }
+        public Guid Id { get; protected set; }
         [Required]
-        public string Name { get;  set; }
+        public string Name { get; protected set; }
         [Required]
-        public int Number { get;  set; }
+        public int Number { get; protected set; }
         [Required]
-        public string Description { get;  set; }
+        public string Description { get; protected set; }
         public string PhotoPath { get; set; }
 
         public WordsDictionary WordsDictionary { get; set; }
@@ -25,6 +25,7 @@ namespace FemdAPI.Core.Domains
             Name = name;
             Number = number;
             Description = description;
+            Id = Guid.NewGuid();
         }
     }
 }

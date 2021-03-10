@@ -11,30 +11,19 @@ export class PersonalPronounComponent implements OnInit {
 
   constructor(public lectureService: LectureService) { }
 
-  personalPronoun = new Array<PersonalPronoun>();
+  personalPronoun: PersonalPronoun;
   ngOnInit(): void {
   }
 
-  getPersonalPronoun(): void
+  getPersonalPronoun(): PersonalPronoun
   {
     this.lectureService.getPerspnalPronoun()
         .subscribe( data =>
           {
-            console.log(data);
-            this.personalPronoun = [data].map(item =>
-              {
-                  return new PersonalPronoun(
-                    item.translation,
-                    item.firstPerson,
-                    item.secondPerson,
-                    item.thirdPerson,
-                    item.firstPersonPlural,
-                    item.secondPersonPlural,
-                    item.thirdPersonPlural,
-                    item.formal,
-                  );
-              });
+            this.personalPronoun = data;
+            console.log(this.personalPronoun);
           });
+    return this.personalPronoun;
   }
 
 

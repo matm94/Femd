@@ -14,10 +14,10 @@ export class AdjectiveComponent implements OnInit {
 
   constructor(public lectureService: LectureService, private fb: FormBuilder, private router: LectureRouterServiceService) { }
 
-  adjectives = new Array<PartsOfSpeech>();
+  adjective: PartsOfSpeech;
   public fakeAdjective = new Array<PartsOfSpeech>
   (
-    new PartsOfSpeech('drogi', 'teuer', 'sdfsdf'),
+    new PartsOfSpeech()
 
   );
   newContentList = Array<string>();
@@ -82,20 +82,14 @@ export class AdjectiveComponent implements OnInit {
   {
     this.adjectiveForm.reset();
   }
-  getAdjective(): void
+  getAdjective(): PartsOfSpeech
   {
     this.lectureService.getAdjective()
         .subscribe( data =>
           {
-            console.log(data);
-            this.adjectives = [data].map(item =>
-              {
-                  return new PartsOfSpeech(
-                    item.translation,
-                    item.content,
-                    item.photoPath,
-                  );
-              });
+            this.adjective = data;
+            console.log(this.adjective);
           });
+    return this.adjective;
   }
 }

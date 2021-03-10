@@ -11,25 +11,19 @@ export class SentenceComponent implements OnInit {
 
   constructor(public lectureService: LectureService) { }
 
-  sentence = new Array<PartsOfSpeech>();
+  sentence: PartsOfSpeech;
   ngOnInit(): void {
   }
 
-  getSentence(): void
+  getSentence(): PartsOfSpeech
   {
     this.lectureService.getSentence()
         .subscribe( data =>
           {
-            console.log(data);
-            this.sentence = [data].map(item =>
-              {
-                  return new PartsOfSpeech(
-                    item.translation,
-                    item.content,
-                    item.photoPath,
-                  );
-              });
+            this.sentence = data;
+            console.log(this.sentence);
           });
+    return this.sentence;
   }
 
 }

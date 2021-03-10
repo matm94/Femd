@@ -67,8 +67,14 @@ namespace FemdAPI.Infrastructure
                          },
                          PersonalPronouns = new List<PersonalPronoun>()
                          {
-                             new PersonalPronoun("Nominativ - mianownik","ich","du","er","Wir","Ihr","sie","Sie","c/mianownik"),
-                             new PersonalPronoun("Genitive - dopełniacz","meiner","deiner","seiner","unserer","eurer","ihrer","Ihrer","c/genitive")
+                             new PersonalPronoun("Nominativ - mianownik","ich","du","er","Wir","Ihr","sie","Sie")
+                             {
+                                 PhotoPath = "C/sciezka",
+                             },
+                             new PersonalPronoun("Genitive - dopełniacz","meiner","deiner","seiner","unserer","eurer","ihrer","Ihrer")
+                             {
+                                 PhotoPath = "C/sciezka",
+                             }
                          },
                          Sentences = new List<Sentence>()
                          {

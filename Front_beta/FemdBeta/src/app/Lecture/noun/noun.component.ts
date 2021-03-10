@@ -11,25 +11,19 @@ export class NounComponent implements OnInit {
 
   constructor(public lectureService: LectureService) { }
 
-  noun = new Array<PartsOfSpeech>();
+  noun: PartsOfSpeech;
   ngOnInit(): void {
   }
 
-  getNoun(): void
+  getNoun(): PartsOfSpeech
   {
     this.lectureService.getNoun()
         .subscribe( data =>
           {
-            console.log(data);
-            this.noun = [data].map(item =>
-              {
-                  return new PartsOfSpeech(
-                    item.translation,
-                    item.content,
-                    item.photoPath,
-                  );
-              });
+            this.noun = data;
+            console.log(this.noun);
           });
+    return this.noun;
   }
 
 }

@@ -11,25 +11,19 @@ export class AdverbComponent implements OnInit {
 
   constructor(public lectureService: LectureService) { }
 
-  adverb = new Array<PartsOfSpeech>();
+  adverb: PartsOfSpeech;
   ngOnInit(): void {
   }
 
-  getAdverb(): void
+  getAdverb(): PartsOfSpeech
   {
     this.lectureService.getAdverb()
         .subscribe( data =>
           {
-            console.log(data);
-            this.adverb = [data].map(item =>
-              {
-                  return new PartsOfSpeech(
-                    item.translation,
-                    item.content,
-                    item.photoPath,
-                  );
-              });
+            this.adverb = data;
+            console.log(this.adverb);
           });
+    return this.adverb;
   }
 
 }

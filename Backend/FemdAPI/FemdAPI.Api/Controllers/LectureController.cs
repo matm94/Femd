@@ -44,7 +44,7 @@ namespace FemdAPI.Api.Controllers
         [HttpGet("Adjective/{id}")]
         public ActionResult<AdjectiveDTO> GetAdjective(Guid id)
         {
-            var adjective = _lectureService.GetAdjectie(id);
+            var adjective = _lectureService.GetAdjective(id);
             return Ok(adjective);
         }
 

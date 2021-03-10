@@ -15,13 +15,4 @@ export class CompleteLecture
   Sentences: Array<PartsOfSpeech>;
   Verbs: Array<Verb>;
 
-  constructor(id: string, name: string, lectureNumber: number, description: string, adjectives: Array<PartsOfSpeech>)
-  {
-      this.Id = id;
-      this.Name = name;
-      this.LectureNumber = lectureNumber;
-      this.Desription = description;
-      this.Adjectives = adjectives;
-
-  }
 }

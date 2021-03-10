@@ -35,11 +35,12 @@ namespace FemdAPI.Infrastructure.Repositories
              => _femdApiContext.WordsDictionaryDbSet
                 .Include(x => x.Adjectives)
                 .Include(x => x.Adverbs)
-                .Include(y => y.Nouns)
+                .Include(x => x.Nouns)
                 .Include(x => x.PersonalPronouns)
                 .Include(x => x.Sentences)
                 .Include(x => x.Verbs)
                 .SingleOrDefault(x => x.LectureId == id);
+
         public Adjective GetAdjectie(Guid id)
             => _femdApiContext.AdjectiveDbSet.FirstOrDefault(x => x.Id == id);
 
@@ -79,6 +80,5 @@ namespace FemdAPI.Infrastructure.Repositories
             _femdApiContext.SaveChanges();
         }
 
-        
     }
 }

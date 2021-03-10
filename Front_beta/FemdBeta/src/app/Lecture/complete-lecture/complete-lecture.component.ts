@@ -1,9 +1,9 @@
+import { CompleteLecture } from './../../Models/CompleteLecture';
 import { LectureRouterServiceService } from './../../Shared/lecture-router-service.service';
 import { Verb } from '../../Models/Verb';
 import { PersonalPronoun } from '../../Models/PersonalPronoun';
 import { Lecture } from '../../Models/Lecture';
 import { PartsOfSpeech } from '../../Models/PartsOfSpeech';
-import { CompleteLecture } from '../../Models/CompleteLecture';
 import { LectureService } from './../../Shared/lecture.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -16,29 +16,21 @@ export class CompleteLectureComponent implements OnInit {
 
   constructor(public lectureService: LectureService, private router: LectureRouterServiceService) { }
 
-  lecture = new Array<Lecture>();
+  lectureApi: Lecture;
   ngOnInit(): void{
 
     this.getLecture();
   }
 
-  getLecture(): void
+  getLecture(): Lecture
   {
     this.lectureService.getLecture()
         .subscribe( data =>
           {
-            console.log(data);
-            this.lecture = [data].map(item =>
-              {
-                  return new Lecture(
-
-                    item.id,
-                    item.name,
-                    item.lectureNumber,
-                    item.description,
-                  );
-              });
+            this.lectureApi = data;
+            console.log(this.lectureApi);
           });
+    return this.lectureApi;
   }
 
   goAdjective(): void

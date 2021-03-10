@@ -8,30 +8,30 @@ namespace FemdAPI.Core.Domains
     public class PersonalPronoun
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; protected set; }
         [Required]
-        public string Translation { get; set; }
+        public string Translation { get; protected set; }
         [Required]
-        public string FirstPerson { get; set; }
+        public string FirstPerson { get; protected set; }
         [Required]
-        public string SecondPerson { get; set; }
+        public string SecondPerson { get; protected set; }
         [Required]
-        public string ThirdPerson { get; set; }
+        public string ThirdPerson { get; protected set; }
         [Required]
-        public string FirstPersonPlural { get; set; }
+        public string FirstPersonPlural { get; protected set; }
         [Required]
-        public string SecondPersonPlural { get; set; }
+        public string SecondPersonPlural { get; protected set; }
         [Required]
-        public string ThirdPersonPlural { get; set; }
+        public string ThirdPersonPlural { get; protected set; }
         [Required]
-        public string Formal { get; set; }
+        public string Formal { get; protected set; }
         [Required]
         public string PhotoPath { get; set; }
-        public Guid WordsDictonaryId { get; protected set; }
-        public WordsDictionary WordsDictionary { get; protected set; }
+        public Guid WordsDictonaryId { get;  set; }
+        public WordsDictionary WordsDictionary { get;  set; }
 
         public PersonalPronoun(string translation, string firstPerson, string secondPerson, string thirdPerson,
-            string firstPersonPlural, string secondPersonPlural, string thirdPersonPlural, string formal, string photoPath)
+            string firstPersonPlural, string secondPersonPlural, string thirdPersonPlural, string formal)
         {
             Translation = translation;
             FirstPerson = firstPerson;
@@ -41,7 +41,7 @@ namespace FemdAPI.Core.Domains
             SecondPersonPlural = secondPersonPlural;
             ThirdPersonPlural = thirdPersonPlural;
             Formal = formal;
-            PhotoPath = photoPath;
+            Id = Guid.NewGuid();
         }
 
     }

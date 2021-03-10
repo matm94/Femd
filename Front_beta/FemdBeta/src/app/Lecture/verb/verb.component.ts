@@ -11,31 +11,18 @@ export class VerbComponent implements OnInit {
 
   constructor(public lectureService: LectureService) { }
 
-  verb = new Array<Verb>();
+  verb: Verb;
   ngOnInit(): void {
   }
-  getVerb(): void
+  getVerb(): Verb
   {
     this.lectureService.getVerb()
         .subscribe( data =>
           {
-            console.log(data);
-            this.verb = [data].map(item =>
-              {
-                  return new Verb(
-                    item.translation,
-                    item.infinitive,
-                    item.conjugationTense,
-                    item.conjugationIch,
-                    item.conjugationDu,
-                    item.conjugationEr,
-                    item.conjugationWir,
-                    item.conjugationIhr,
-                    item.conjugationsie,
-                    item.conjugationSie,
-                  );
-              });
+            this.verb = data;
+            console.log(this.verb);
           });
+    return this.verb;
   }
 
 }

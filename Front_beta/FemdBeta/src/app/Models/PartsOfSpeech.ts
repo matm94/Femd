@@ -4,10 +4,4 @@ export class PartsOfSpeech
   Content: string;
   PhotoPath: string;
 
-  constructor(translation: string, content: string, photoPath: string)
-  {
-    this.Translation = translation;
-    this.Content = content;
-    this.PhotoPath = photoPath;
-  }
 }

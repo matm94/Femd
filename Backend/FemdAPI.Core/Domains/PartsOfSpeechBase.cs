@@ -10,18 +10,19 @@ namespace FemdAPI.Core.Domains
         [Key]
         public Guid Id { get; protected set; }
         [Required]
-        public string Translation { get; set; }
+        public string Translation { get; protected set; }
         [Required]
-        public string Content { get; set; }
+        public string Content { get; protected set; }
         [Required]
         public string PhotoPath { get; set; }
-        public Guid WordsDictonaryId { get; protected set; }
-        public WordsDictionary WordsDictionary { get; protected set; }
+        public Guid WordsDictonaryId { get; set; }
+        public WordsDictionary WordsDictionary { get; set; }
         public PartsOfSpeechBase(string translation, string content, string photoPath)
         {
             Translation = translation;
             Content = content;
             PhotoPath = photoPath;
+            Id = Guid.NewGuid();
         }
     }
 }
