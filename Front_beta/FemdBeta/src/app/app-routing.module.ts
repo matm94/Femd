@@ -13,10 +13,10 @@ import { RegistrationComponent } from './User/registration/registration.componen
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
-import { AdjectiveComponent } from './Lecture/adjective/adjective.component';
-import { PictureModuleComponent } from './lecture/picture-module/picture-module.component';
-import { WordsDictionaryComponent } from './Lecture/words-dictionary/words-dictionary.component';
-import { TextfieldComponent } from './lecture/textfield/textfield.component';
+import { AdjectiveComponent } from './Lecture/complete-lecture/adjective/adjective.component';
+import { PictureModuleComponent } from './Lecture/complete-lecture/picture-module/picture-module.component';
+import { WordsDictionaryComponent } from './Lecture/complete-lecture/words-dictionary/words-dictionary.component';
+import { TextfieldComponent } from './Lecture/complete-lecture/textfield/textfield.component';
 import { CompleteLectureComponent } from './Lecture/complete-lecture/complete-lecture.component';
 
 

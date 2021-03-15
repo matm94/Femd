@@ -1,9 +1,10 @@
-import { LectureRouterServiceService } from './../../Shared/lecture-router-service.service';
+
 import { Component, OnInit } from '@angular/core';
 import { PartsOfSpeech } from 'src/app/Models/PartsOfSpeech';
 import { LectureService } from 'src/app/Shared/lecture.service';
 import { FormControl, FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
+import { LectureRouterServiceService } from 'src/app/Shared/lecture-router-service.service';
 
 @Component({
   selector: 'app-adjective',

@@ -27,7 +27,7 @@ export class LectureRouterServiceService {
   }
   goToCompleteLecture(): void
   {
-    this.router.navigate(['complete-lecture'])
+    this.router.navigate(['complete-lecture']);
   }
 
 }
