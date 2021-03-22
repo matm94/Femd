@@ -13,11 +13,11 @@ import { RegistrationComponent } from './User/registration/registration.componen
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
-import { AdjectiveComponent } from './Lecture/complete-lecture/adjective/adjective.component';
-import { PictureModuleComponent } from './Lecture/complete-lecture/picture-module/picture-module.component';
-import { WordsDictionaryComponent } from './Lecture/complete-lecture/words-dictionary/words-dictionary.component';
-import { TextfieldComponent } from './Lecture/complete-lecture/textfield/textfield.component';
-import { CompleteLectureComponent } from './Lecture/complete-lecture/complete-lecture.component';
+import { AdjectiveComponent } from './LectureModule/complete-lecture/adjective/adjective.component';
+import { PictureModuleComponent } from './LectureModule/complete-lecture/picture-module/picture-module.component';
+import { WordsDictionaryComponent } from './LectureModule/complete-lecture/words-dictionary/words-dictionary.component';
+import { TextfieldComponent } from './LectureModule/complete-lecture/textfield/textfield.component';
+import { CompleteLectureComponent } from './LectureModule/complete-lecture/complete-lecture.component';
 
 
 const routes: Routes = [

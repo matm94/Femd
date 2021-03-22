@@ -1,4 +1,4 @@
-import { LectureService } from './Shared/lecture.service';
+import { LectureAPIService } from './Shared/lecture.service';
 import { NavBarService } from './Shared/nav-bar.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { UserService } from './Shared/user.service';
@@ -22,20 +22,15 @@ import { TopTenComponent } from './home/top-ten/top-ten.component';
 import { UserProfileComponent } from './home/user-profile/user-profile.component';
 import { ProfileSettingsComponent } from './home/profile-settings/profile-settings.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { CompleteLectureComponent } from './Lecture/complete-lecture/complete-lecture.component';
-import { WordsDictionaryComponent } from './Lecture/complete-lecture/words-dictionary/words-dictionary.component';
-import { AdjectiveComponent } from './Lecture/complete-lecture/adjective/adjective.component';
-import { AdverbComponent } from './Lecture/complete-lecture/adverb/adverb.component';
-import { NounComponent } from './Lecture/complete-lecture/noun/noun.component';
-import { PersonalPronounComponent } from './Lecture/complete-lecture/personal-pronoun/personal-pronoun.component';
-import { SentenceComponent } from './Lecture/complete-lecture/sentence/sentence.component';
-import { VerbComponent } from './Lecture/complete-lecture/verb/verb.component';
-import { PictureModuleComponent } from './Lecture/complete-lecture/picture-module/picture-module.component';
-import { WordsModuleComponent } from './Lecture/complete-lecture/words-module/words-module.component';
-import { DictionaryModuleComponent } from './Lecture/complete-lecture/dictionary-module/dictionary-module.component';
-import { TextfieldComponent } from './Lecture/complete-lecture/textfield/textfield.component';
+import { CompleteLectureComponent } from './LectureModule/complete-lecture/complete-lecture.component';
+import { WordsDictionaryComponent } from './LectureModule/complete-lecture/lecture/words-dictionary/words-dictionary.component';
+import { PictureModuleComponent } from './LectureModule/complete-lecture/lecture/picture-module/picture-module.component';
+import { WordsModuleComponent } from './LectureModule/complete-lecture/lecture/words-module/words-module.component';
+import { TextfieldComponent } from './LectureModule/complete-lecture/lecture/textfield/textfield.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AllLectureMenuComponent } from './LectureModule/complete-lecture/all-lecture-menu/all-lecture-menu.component';
+import { LectureComponent } from './LectureModule/complete-lecture/lecture/lecture.component';
 
 
 
@@ -58,16 +53,11 @@ import { environment } from '../environments/environment';
     NavBarComponent,
     CompleteLectureComponent,
     WordsDictionaryComponent,
-    AdjectiveComponent,
-    AdverbComponent,
-    NounComponent,
-    PersonalPronounComponent,
-    SentenceComponent,
-    VerbComponent,
     PictureModuleComponent,
     WordsModuleComponent,
-    DictionaryModuleComponent,
-    TextfieldComponent
+    TextfieldComponent,
+    AllLectureMenuComponent,
+    LectureComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +69,7 @@ import { environment } from '../environments/environment';
   ],
   providers: [
     UserService,
-    LectureService,
+    LectureAPIService,
     NavBarService,
     {
       provide : HTTP_INTERCEPTORS,

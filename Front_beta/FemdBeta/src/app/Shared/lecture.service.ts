@@ -11,7 +11,7 @@ import { Verb } from '../Models/Verb';
 @Injectable({
   providedIn: 'root'
 })
-export class LectureService {
+export class LectureAPIService {
 
   constructor(private http: HttpClient) { }
 

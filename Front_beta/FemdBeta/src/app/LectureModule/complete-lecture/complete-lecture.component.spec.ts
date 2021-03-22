@@ -1,6 +1,7 @@
+import { LectureComponent } from './lecture/lecture.component';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-
 import { CompleteLectureComponent } from './complete-lecture.component';
+
 
 describe('CompleteLectureComponent', () => {
   let component: CompleteLectureComponent;
