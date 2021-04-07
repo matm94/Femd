@@ -9,6 +9,7 @@ namespace FemdAPI.Infrastructure.Services
     public interface ILectureService
     {
         LectureDTO Get(string name);
+        LectureDTO Get(Guid id);
         CompleteLectureDTO GetFullLecture(Guid id);
         WordsDictionaryDTO GetOnlyDictionary(Guid id);
         AdjectiveDTO GetAdjective(Guid id);
