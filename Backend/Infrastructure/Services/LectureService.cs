@@ -24,6 +24,11 @@ namespace FemdAPI.Infrastructure.Services
             var lecture = _lectureRepository.GetLectureOrNull(name);
             return _mapper.Map<LectureDTO>(lecture);
         }
+        public LectureDTO Get(Guid id)
+        {
+            var lecture = _lectureRepository.GetLectureOrNull(id);
+            return _mapper.Map<LectureDTO>(lecture);
+        }
         public CompleteLectureDTO GetFullLecture(Guid id)
         {
             var lecture = _lectureRepository.GetLectureOrNull(id);

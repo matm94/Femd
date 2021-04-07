@@ -27,6 +27,15 @@ namespace FemdAPI.Api.Controllers
             var lecture = _lectureService.Get(name);
             return Ok(lecture);
         }
+
+        [HttpGet("LectureId/{id}")]
+        public ActionResult<LectureDTO> Get(Guid id)
+        {
+            var lecture = _lectureService.Get(id);
+            return Ok(lecture);
+        }
+
+
         [HttpGet("CompleteLecture/{id}")]
         public ActionResult<CompleteLectureDTO> GetCompleteLectureDTO(Guid id)
         {
