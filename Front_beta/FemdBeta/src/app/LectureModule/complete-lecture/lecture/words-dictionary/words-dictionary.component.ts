@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CompleteLecture } from 'src/app/Models/CompleteLecture';
 import { LectureRouterServiceService } from 'src/app/Shared/lecture-router-service.service';
 
 @Component({
@@ -7,6 +8,10 @@ import { LectureRouterServiceService } from 'src/app/Shared/lecture-router-servi
   styleUrls: ['./words-dictionary.component.css']
 })
 export class WordsDictionaryComponent implements OnInit {
+
+  //zmienić jesli dane z API będą wysyłane z odrębnej klasy
+  @Input()
+  completeLectureWordsDictionary: CompleteLecture;
 
   constructor( private router: LectureRouterServiceService) { }
 

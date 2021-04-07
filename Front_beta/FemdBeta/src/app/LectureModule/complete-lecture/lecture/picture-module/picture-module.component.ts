@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { CompleteLecture } from './../../../../Models/CompleteLecture';
+import { Component, Input, OnInit } from '@angular/core';
 import { LectureRouterServiceService } from 'src/app/Shared/lecture-router-service.service';
 
 @Component({
@@ -8,6 +9,9 @@ import { LectureRouterServiceService } from 'src/app/Shared/lecture-router-servi
 })
 export class PictureModuleComponent implements OnInit {
 
+  // zmienic jesli dane z API bedą wysylane tylko z klasy picture
+  @Input()
+  completeLecturePicture: CompleteLecture;
   constructor( private router: LectureRouterServiceService) { }
 
   ngOnInit(): void {

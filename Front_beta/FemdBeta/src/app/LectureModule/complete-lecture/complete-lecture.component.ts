@@ -1,9 +1,10 @@
-import { CompleteLecture } from '../../Models/CompleteLecture';
+import { PartsOfSpeech } from './../../Models/PartsOfSpeech';
+import { CompleteLectureDTO } from './../../Models/CompleteLectureDTO';
+import { CompleteLecture } from './../../Models/CompleteLecture';
 import { LectureRouterServiceService } from '../../Shared/lecture-router-service.service';
 import { Verb } from '../../Models/Verb';
 import { PersonalPronoun } from '../../Models/PersonalPronoun';
 import { Lecture } from '../../Models/Lecture';
-import { PartsOfSpeech } from '../../Models/PartsOfSpeech';
 import { LectureAPIService } from '../../Shared/lecture.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -15,31 +16,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompleteLectureComponent implements OnInit {
 
-  lectureNumber: string;
+  lectureNumberFromuser: string;
+  completeLectureApiData: CompleteLecture;
 
-  constructor(public lectureService: LectureAPIService, private router: LectureRouterServiceService) { }
-
-  completeLectureApi;
+  constructor(private lectureService: LectureAPIService, private router: LectureRouterServiceService) { }
   ngOnInit(): void{
-
-    this.getCompleteLecture();
+    this.getCompleteLectureFromUser(this.lectureNumberFromuser);
   }
 
-  getLectureNumberFromUser(lectureNumberFromuser: string): void
+  getCompleteLectureFromUser(lectureNumberFromuser: string): CompleteLecture
   {
-    this.lectureNumber = lectureNumberFromuser;
-  }
-
-
-  getCompleteLecture(): CompleteLecture
-  {
-    this.lectureService.getCompleteLecture()
+    this.lectureService.getCompleteLecture(lectureNumberFromuser)
         .subscribe( data =>
           {
-            this.completeLectureApi = data;
-            console.log(this.completeLectureApi);
+            this.completeLectureApiData = data;
+            console.log('Dane z CompleteLecture: ' + this.completeLectureApiData);
+            console.log('Dane z Data z sub: ' + data);
           });
-    return this.completeLectureApi;
+    return this.completeLectureApiData;
   }
+
+
 
 }

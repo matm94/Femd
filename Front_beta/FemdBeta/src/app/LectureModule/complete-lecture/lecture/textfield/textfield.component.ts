@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CompleteLecture } from 'src/app/Models/CompleteLecture';
 import { LectureRouterServiceService } from 'src/app/Shared/lecture-router-service.service';
 
 @Component({
@@ -7,6 +8,10 @@ import { LectureRouterServiceService } from 'src/app/Shared/lecture-router-servi
   styleUrls: ['./textfield.component.css']
 })
 export class TextfieldComponent implements OnInit {
+
+  //zmienić jesli dane beda wysylane z odrebnej klasy textfield
+  @Input()
+  completeLectureText: CompleteLecture;
 
   constructor(private router: LectureRouterServiceService) { }
 
