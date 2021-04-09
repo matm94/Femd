@@ -20,7 +20,7 @@
     "FemdAPI.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "femd",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

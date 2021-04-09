@@ -144,3 +144,7 @@ D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\FemdAPI.
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\FemdAPI.Api.MvcApplicationPartsAssemblyInfo.cs
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\FemdAPI.Api.MvcApplicationPartsAssemblyInfo.cache
 D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\obj\Debug\netcoreapp3.1\scopedcss\bundle\FemdAPI.Api.styles.css
+D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\nlog.config
+D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\NLog.dll
+D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+D:\Repozytoria\Femd\Backend\FemdAPI\FemdAPI.Api\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll

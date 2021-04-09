@@ -7,6 +7,8 @@ using FemdAPI.Infrastructure.Models;
 using FemdAPI.Infrastructure.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using NLog;
 
 namespace FemdAPI.Api.Controllers
 {
@@ -15,16 +17,19 @@ namespace FemdAPI.Api.Controllers
     public class LectureController : ControllerBase
     {
         private readonly ILectureService _lectureService;
+        private readonly ILogger<LectureController> _logger;
 
-        public LectureController(ILectureService lectureService)
+        public LectureController(ILectureService lectureService, ILogger<LectureController> logger)
         {
             _lectureService = lectureService;
+            _logger = logger;
         }
 
         [HttpGet("name/{name}")]
         public ActionResult<LectureDTO> Get(string name)
         {
             var lecture = _lectureService.Get(name);
+            _logger.LogInformation("wykonano zapytanie o wyklad");
             return Ok(lecture);
         }
 

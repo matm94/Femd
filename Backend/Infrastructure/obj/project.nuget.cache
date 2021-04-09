@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yZUAaXirSQhAZP4sL9JHP9BI4+62rbLk/l+fGkE1OMziLAQ5z4BUoYIQCw1WztzrNrmzsP9Iq/K1wkYdZTzq9Q==",
+  "dgSpecHash": "zPJGugQFuqPOaQQeU0GdeZsKcyJyLXuO0wsZ7pzV8+ktsVM99p5+S79zRlz9RVbUxD9f10hj0oajx51cbl1b0Q==",
   "success": true,
   "projectFilePath": "D:\\Repozytoria\\Femd\\Backend\\Infrastructure\\FemdAPI.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -50,6 +50,9 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\matm9\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\matm9\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\matm9\\.nuget\\packages\\nlog\\4.7.9\\nlog.4.7.9.nupkg.sha512",
+    "C:\\Users\\matm9\\.nuget\\packages\\nlog.extensions.logging\\1.7.2\\nlog.extensions.logging.1.7.2.nupkg.sha512",
+    "C:\\Users\\matm9\\.nuget\\packages\\nlog.web.aspnetcore\\4.12.0\\nlog.web.aspnetcore.4.12.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
