@@ -122,8 +122,6 @@ namespace FemdAPI.Api
                 };
             });
 
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -162,7 +160,7 @@ namespace FemdAPI.Api
 
             sampleData.GetSampleData();
 
-
+            
         }
     }
 }

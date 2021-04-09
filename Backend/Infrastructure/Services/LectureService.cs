@@ -3,6 +3,8 @@ using FemdAPI.Core.Domains;
 using FemdAPI.Core.Repositories;
 using FemdAPI.Infrastructure.Extensions;
 using FemdAPI.Infrastructure.Models;
+using Microsoft.Extensions.Logging;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,7 +19,7 @@ namespace FemdAPI.Infrastructure.Services
         public LectureService(ILectureRepository lectureRepository, IMapper mapper)
         {
             _lectureRepository = lectureRepository;
-            _mapper = mapper;   
+            _mapper = mapper;
         }
         public LectureDTO Get(string name)
         {
